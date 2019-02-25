@@ -28,7 +28,7 @@
                 <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
             </div>
             <div class="js-header--right">
-                <p>HPE Evento Guatemala</p>
+                <p>HPE Evento Pais</p>
             </div>
         </div>
         <section class="js-section js-height">

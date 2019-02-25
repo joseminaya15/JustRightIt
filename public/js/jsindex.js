@@ -1,9 +1,9 @@
 var $win = $(window);
 $win.scroll(function () {
 	if ($win.scrollTop() > 45) {
-		$(".js-header").addClass("navbarcolor");
+		$("nav").addClass("navbarcolor");
 	} else {
-		$(".js-header").removeClass("navbarcolor");
+		$("nav").removeClass("navbarcolor");
 	}
 });
 $('a.link[href^="#"]').click(function(e) {
@@ -17,6 +17,23 @@ $('a.link[href^="#"]').click(function(e) {
  	$('html, body').animate({
  		scrollTop : (y - 40)
  	}, 'slow');
+});
+$('#home .owl-carousel').owlCarousel({
+	lazyLoad : true,
+	animateOut: 'fadeOut',
+	animateIn: 'fadeIn',
+	responsive : {
+		0 : {
+			items : 1
+		}
+	},
+	navigation : false,
+	nav : false,
+	loop : true,
+	autoplay : true,
+	mouseDrag: false,
+	dots: false,
+	autoplayTimeout : 3000
 });
 function sendInformation(){
 	var check_book  = null;

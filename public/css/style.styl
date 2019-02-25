@@ -197,7 +197,7 @@ strong
 	max-width 1150px
 	margin auto
 .js-home
-	height 500px
+	height 100vh
 .js-input
 	padding 7px 20px
 	height 70px
@@ -347,20 +347,39 @@ strong
 		border 2px solid #FFFFFF
 .js-fondo
 	absolute()
-	background url(../img/fondo/fondo-home.png) no-repeat bottom center
-	background-size cover
+	background url(../img/fondo/fondo1.jpeg) no-repeat bottom center
+	background-size cover !important
 	width 100%
-	height 500px
+	height 100vh
 	z-index -1
 	&:BEFORE
 		absolute()
 		content ''
-		background-color rgb(66, 85, 99)
+		background-color #000000
 		z-index 0
-		height 500px
+		height 100vh
 		opacity .5
+	&.fondo1
+		background url(../img/fondo/fondo1.jpeg) no-repeat center center
+	&.fondo2
+		background url(../img/fondo/fondo2.jpg) no-repeat center center
+	&.fondo3
+		background url(../img/fondo/fondo3.jpg) no-repeat center center
+#home
+	.owl-stage-outer
+	.owl-stage
+		height 100vh
+	.owl-carousel
+		absolute()
+		width 100%
+		z-index 1
+		max-width 100%
+		.owl-item
+			height 100vh
+			.item
+				height 100vh
 footer
-	background-color #425563
+	background-color #000000
 	color #FFFFFF
 	p
 		font-size 14px
@@ -373,13 +392,36 @@ footer
 	&>li
 		&.active
 			&>a
-				font-family $bold				
+				font-family $bold
+/*BOOTSTRAP*/
+.navbar-default
+	transitionAll()
+	margin 0
+	padding 10px
+	border none
+	border-radius 0
+	position fixed
+	width 100%
+	background-color #425563
+	z-index 10
+	.navbar-nav
+		&>li
+			&>a
+				color #FFFFFF !important
+				font-size 18px
+				background-color transparent !important
+.navbar-brand
+	padding 0
+	position relative
+	img
+		transitionMaxWidth()
+		max-width 125px				
 /*CLASES PROYECTO*/
 .js-contenido
 	text-align center
 	color #FFFFFF
 	max-width 680px
-	background-color rgba(48, 132, 168, .5)
+	z-index 5
 	h2
 		font-size 60px
 		line-height 60px
@@ -624,10 +666,21 @@ table
 	background-color #AAAAAA
 	border-radius 10px
 @media (min-width: 768px)
-	.js-header
+	.navbar
 		background-color transparent
 		&.navbarcolor
 			background-color #425563
+			.navbar-brand
+				img
+					max-width 125px
+	.navbar-brand
+		img
+			max-width 150px
+// @media (min-width: 768px)
+// 	.js-header
+// 		background-color transparent
+// 		&.navbarcolor
+// 			background-color #425563
 @media (max-width: 600px)
 	.js-contenido
 		padding 20px

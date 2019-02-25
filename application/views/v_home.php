@@ -16,36 +16,68 @@
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap/css/bootstrap.min.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>owl-carousel/owl.carousel.min.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>owl-carousel/owl.theme.default.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
 </head>
 <body>
-    <div class="js-header">
+    <!-- <div class="js-header">
         <div class="js-header--container">
             <div class="js-header--left">
                 <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
             </div>
-            <div class="js-header--right">
-                <img src="<?php echo RUTA_IMG?>logo/logo-sass.png">
+        </div>
+    </div> -->
+    <nav class="navbar navbar-default">
+        <div class="js-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand link" href="#home">
+                    <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item active"><a class="link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="link" href="#register">Registro</a></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
     <section id="home">
-        <div class="js-fondo"></div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="js-fondo fondo1"></div>
+            </div>
+            <div class="item">
+                <div class="js-fondo fondo2"></div>
+            </div>
+            <div class="item">
+                <div class="js-fondo fondo3"></div>
+            </div>
+        </div>
         <div class="js-container">
             <div class="js-home js-flex">
                 <div class="js-contenido">
-                    <h2>Persiguiendo las grandes tormentas</h2>
-                    <p>Un evento de tendencias globales</p>
+                    <h2>Quieres ser parte del equipo ganador?</h2>
+                    <p>Del 17 al 21 de Marzo</p>
+                    <p>Ciudad, País</p>
+                    <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
                 </div>
             </div>
         </div>
     </section>
     <section id="register" class="js-section">
         <div class="js-container">
-            <div class="js-information">
+            <!-- <div class="js-information">
                 <h1>El ORBE ofrece a sus clientes soluciones tecnol&oacute;gicas innovadoras, basadas en el portafolio de l&iacute;deres de la industria como HPE y SAS, para apoyarles en su proceso de transformaci&oacute;n y en su capacidad para tomar mejores decisiones y generar mayores resultados para su negocio.</h1>
                 <h2>Jueves 7 de Febrero, 2019</h2>
                 <h3>Hora de inicio: 4:00 p.m.</h3>
@@ -53,7 +85,7 @@
                 <span>6A Avenida 9-18 zona 10, Edificio Sixtino2 nivel 10, Ciudad de Guatemala</span>
                 <h4>Un evento de</h4>
                 <img src="<?php echo RUTA_IMG?>logo/logo-orbe.png">
-            </div>
+            </div> -->
             <div class="js-title">
                 <h2>Reg&iacute;strese completando el siguiente formulario</h2>
             </div>
@@ -98,7 +130,7 @@
                     <p>Parte de la filosofia de <strong style="font-weight: 100;">Componentes El Orbe</strong> es compartir conocimiento por lo que queremos  obsequiarle a los 40
                     primeros registrados un libro de esta coleccion de reciente lanzamiento. Marque el de su preferencia el cual se le entregara en el evento.</p>
                 </div>
-                <div class="col-xs-12">
+                <!-- <div class="col-xs-12">
                     <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
@@ -169,7 +201,7 @@
                             <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="1">
                         </label>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="js-section--button text-center">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-login" onclick="sendInformation()">Enviar</button>
@@ -181,7 +213,7 @@
     </section>
     <footer class="js-section p-t-20 p-b-20">
         <div class="js-container text-center">
-            <p>&copy;Copyright 2018 Hewlett Packard Enterprise Development LP</p>
+            <p>&copy;Copyright 2019 Hewlett Packard Enterprise Development LP</p>
             <p class="content">*Completando está información participa en un sorteo al final del evento.</p>
         </div>
     </footer>
@@ -212,6 +244,7 @@
     <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/bootstrap-select.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/i18n/defaults-es_ES.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_PLUGINS?>owl-carousel/owl.carousel.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>jsindex.js?v=<?php echo time();?>"></script>
