@@ -21,29 +21,37 @@ class Home extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
       	$data['msj']   = null;
 		try {
+			$empresa 		= $this->input->post('Company');
+			$direccion      = $this->input->post('Direccion');
 			$name           = $this->input->post('Name');
 			$surname 		= $this->input->post('Surname');
+			$cargo 		    = $this->input->post('Position');
 			$correo 		= $this->input->post('Email');
 			$telefono	    = $this->input->post('Phone');
-			$empresa 		= $this->input->post('Company');
-			$cargo 		    = $this->input->post('Position');
-			$book 		    = $this->input->post('Book');
+			$birthday 	    = implode("-", array_reverse(explode("/", $this->input->post('Birthday'))));
+			$deporte	    = $this->input->post('Deporte');
+			$comercializa   = $this->input->post('Comercializa');
+			$descripcion    = $this->input->post('Description');
 			$existe         = $this->M_Datos->existCorreo($correo);
 			$fecha          = date('Y-m-d');
 			if(count($existe) != 0) {
 				$data['msj']   = 'Correo ya registrado';
 			}
 			else{
-				$insertParticipante = array('nombre'    => $name,
-										   'apellido'   => $surname,
-										   'email' 	    => $correo,
-										   'telefono' 	=> $telefono,
-										   'empresa'    => $empresa,
-										   'cargo'      => $cargo,
-										   'flag_libro' => $book,
-										   'fecha'      => $fecha);
+				$insertParticipante = array('empresa'          => $empresa,
+											'direccion'        => $direccion,
+											'nombre'           => $name,
+										   	'apellido'         => $surname,
+										   	'cargo'            => $cargo,
+										   	'email' 	       => $correo,
+										   	'telefono'         => $telefono,
+										   	'birthday'         => $birthday,
+										   	'deporte'          => $deporte,
+										   	'comercializacion' => $comercializa,
+										   	'descripcion'      => $descripcion,
+										   	'fecha'            => $fecha);
 				$datoInsert  = $this->M_Datos->insertarDatos($insertParticipante,'contact');
-				$this->sendConfirmation($correo);
+				// $this->sendConfirmation($correo);
 	          	$data['msj']   = $datoInsert['msj'];
 	          	$data['error'] = $datoInsert['error'];
 	          }

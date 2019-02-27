@@ -36,23 +36,35 @@ $('#home .owl-carousel').owlCarousel({
 	autoplayTimeout : 3000
 });
 function sendInformation(){
-	var check_book  = null;
-	var name 		= $('#name').val();
-	var surname 	= $('#surname').val();
-	var email 		= $('#email').val();
-	var phone 		= $('#phone').val();
-	var company 	= $('#company').val();
-	var position 	= $('#position').val();
-	var option1     = $('#option-1').is(':checked');
-	var option2		= $('#option-2').is(':checked');
-	var option3 	= $('#option-3').is(':checked');
-	var option4		= $('#option-4').is(':checked');
+	var company 	 = $('#company').val();
+	var direccion  	 = $('#direccion').val();
+	var name 		 = $('#name').val();
+	var surname 	 = $('#surname').val();
+	var position 	 = $('#position').val();
+	var email 		 = $('#email').val();
+	var phone 		 = $('#phone').val();
+	var birthday     = $('#birthday').val();
+	var deporte      = $('#deporte').val();
+	var comercializa = $('#comercializa').val();
+	var description  = $('#description').val();
+	if(company == null || company == '') {
+		msj('error', 'Empresa debe completarse');
+		return;
+	}
+	if(direccion == null || direccion == '') {
+		msj('error', 'Direccion debe completarse');
+		return;
+	}
 	if(name == null || name == '') {
 		msj('error', 'Nombre debe completarse');
 		return;
 	}
 	if(surname == null || surname == '') {
 		msj('error', 'Apellido debe completarse');
+		return;
+	}
+	if(position == null || position == '') {
+		msj('error', 'Cargo debe completarse');
 		return;
 	}
 	if(email == null || email == '') {
@@ -63,35 +75,44 @@ function sendInformation(){
 		msj('error', 'El formato de email es incorrecto');
 		return;
 	}
+	if(validateEmailCorporative(email)){
+		msj('error', 'Ingrese un email corporativo');
+	  	return;
+  	}
 	if(phone == null || phone == '') {
 		msj('error', 'Teléfono debe completarse');
 		return;
 	}
-	if(company == null || company == '') {
-		msj('error', 'Empresa debe completarse');
+	if(birthday == null || birthday == '') {
+		msj('error', 'Cumpleaños debe completarse');
 		return;
 	}
-	if(position == null || position == '') {
-		msj('error', 'Cargo debe completarse');
+	if(deporte == null || deporte == '') {
+		msj('error', 'Deporte debe completarse');
 		return;
 	}
-	if(option1 == true){
-		check_book = 1;
-	}else if(option2 == true) {
-		check_book = 2;
-	}else if(option3 == true) {
-		check_book = 3;
-	}else if(option4 == true) {
-		check_book = 4;
+	if(comercializa == null || comercializa == '') {
+		msj('error', 'Seleccione una marca que comercialice su empresa');
+		return;
 	}
+	if(description == null || description == '') {
+		msj('error', 'Seleccione que describe mejor a tu empresa');
+		return;
+	}
+	comercializa = (comercializa == null) ? '' : comercializa.toString();
+	description  = (description == null) ? '' : description.toString();
 	$.ajax({
-		data : {Name	    : name,
-				Surname	    : surname,
-				Email 	    : email,
-				Phone	    : phone,
-				Company	    : company,
-				Position    : position,
-				Book	    : check_book},
+		data : {Company      : company,
+			    Direccion    : direccion,
+				Name	     : name,
+				Surname	     : surname,
+				Position     : position,
+				Email 	     : email,
+				Phone	     : phone,
+				Birthday	 : birthday,
+				Deporte   	 : deporte,
+				Comercializa : comercializa,
+				Description  : description},
 		url  : 'home/register',
 		type : 'POST'
 	}).done(function(data){
@@ -99,8 +120,8 @@ function sendInformation(){
 			data = JSON.parse(data);
 			if(data.error == 0){
 				$('.js-input').find('input').val('');
-				$('.mdl-radio').removeClass('is-checked');
-				$('.mdl-radio__button').prop('checked', false);
+				$('.js-input').find('select').val('0');
+				$('.js-input').find('select').selectpicker('refresh');
 				msj('success', data.msj);
         	}else{
         		msj('error', data.msj);
@@ -115,19 +136,13 @@ function validateEmail(email){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+function validateEmailCorporative(email){
+    var re = /[a-zA-Z0-9@]+(?=hotmail.com|yahoo.com|gmail.com|outlook.com)/;
+    return re.test(email);
+}
 function verificarDatos(e) {
 	if(e.keyCode === 13){
 		e.preventDefault();
 		ingresar();
     }
-}
-function openModalLibro(id){
-	var id = $('#'+id);
-	var modalTeam = $('#ModalLibro');
-	var tituloModal = id.parents('.jm-book').find('h2');
-	var descripcion = id.parents('.jm-book').find('p');
-	var contenido = id.find('.jm-tea__contenido');
-	modalTeam.find('h2').text(tituloModal[0].innerText);
-	modalTeam.find('p').text(descripcion[0].innerText);
-	modalTeam.modal('show');
 }

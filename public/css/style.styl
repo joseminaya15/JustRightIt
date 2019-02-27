@@ -64,46 +64,6 @@ relative()
 	left 0
 	right 0
 	bottom 0
-flipCard()
-	-moz-backface-visibility hidden
-	-webkit-backface-visibility hidden
-	backface-visibility hidden
-	-webkit-transition -webkit-transform 500ms
-	-moz-transition -moz-transform 500ms
-	-o-transition -o-transform 500ms
-	transition transform 500ms
-	border-radius 5px
-	position absolute
-flipCardFront()
-	-webkit-transform perspective(600) rotateY(0)
-	-moz-transform perspective(600) rotateY(0)
-	-o-transform perspective(600) rotateY(0)
-	transform perspective(600) rotateY(0)
-flipCardBack()
-	-webkit-transform rotateY(-180deg)
-	-moz-transform rotateY(-180deg)
-	-o-transform rotateY(-180deg)
-	transform rotateY(-180deg)
-	z-index 900
-flipCardFrontHover()
-	-webkit-transform rotateY(180deg)
-	-moz-transform rotateY(180deg)
-	-o-transform rotateY(180deg)
-	transform rotateY(180deg)
-	-webkit-transform perspective(600) rotateY(180deg)
-	-moz-transform perspective(600) rotateY(180deg)
-	-o-transform perspective(600) rotateY(180deg)
-	transform perspective(600) rotateY(180deg)
-flipCardBackHover()
-	-webkit-transform rotateY(0)
-	-moz-transform rotateY(0)
-	-o-transform rotateY(0)
-	transform rotateY(0)
-	-webkit-transform perspective(600) rotateY(0)
-	-moz-transform perspective(600) rotateY(0)
-	-o-transform perspective(600) rotateY(0)
-	transform perspective(600) rotateY(0)
-	z-index 950
 body
 	margin 0
 	padding 0
@@ -139,6 +99,8 @@ strong
 		font-family $regular
 		font-size 16px
 		line-height 18px
+.jm-white
+	background-color #FFFFFF
 .jm-subtitle
 	p
 		width 100%
@@ -207,6 +169,8 @@ strong
 	margin-bottom -1px
 	color #333333
 	margin 5px 0
+	input 
+		background-color transparent
 	&.js-input--default
 		width 100%
 		max-width 400px
@@ -365,6 +329,8 @@ strong
 		background url(../img/fondo/fondo2.jpg) no-repeat center center
 	&.fondo3
 		background url(../img/fondo/fondo3.jpg) no-repeat center center
+	&.fondo4
+		background url(../img/fondo/fondo4.jpg) no-repeat center center
 #home
 	.owl-stage-outer
 	.owl-stage
@@ -410,6 +376,8 @@ footer
 				color #FFFFFF !important
 				font-size 18px
 				background-color transparent !important
+	.navbar-collapse
+		margin-top 10px
 .navbar-brand
 	padding 0
 	position relative
@@ -584,76 +552,6 @@ table
 	list-style none
 	li
 		line-height 18px
-.jm-book
-	text-align center
-	margin 20px 0
-	padding 0 5px
-	.jm-book__flip
-		position relative
-		width 100%
-		height 235px
-		margin-bottom 10px
-		.jm-book__front
-			flipCard()
-			flipCardFront()
-			width 100%
-			height 100%
-			max-width 180px
-			background-color #FFFFFF
-			left 0
-			right 0
-			margin auto
-			padding 10px
-			img 
-				max-width 150px
-				height 215px
-				object-fit cover
-				cursor pointer
-			.mdl-radio
-				display block
-				margin-top 20px
-				.mdl-radio__inner-circle
-				.mdl-radio__outer-circle
-					left 0
-					right 0
-					text-align center
-					margin auto
-		.jm-book__back
-			flipCard()
-			flipCardBack()
-			width 100%
-			height 100%
-			max-width 180px
-			background-color #425563
-			left 0
-			right 0
-			margin auto
-			padding 10px
-			h2
-				color #FFFFFF
-				margin 8px 0
-				font-size 24px
-				line-height 24px
-			p
-				color #FFFFFF
-				font-size 16px
-				line-height 18px
-				height 90px
-				overflow hidden
-				display -webkit-box
-				-webkit-line-clamp 5
-				-webkit-box-orient vertical
-			.js-button
-				margin 0
-				border none
-				margin-top 20px
-				max-width 120px
-				text-transform none
-		&:hover
-			.jm-book__front
-				flipCardFrontHover()
-			.jm-book__back
-				flipCardBackHover()
 /*TOASTR*/
 /*SCROLL*/
 ::-webkit-scrollbar
@@ -676,11 +574,18 @@ table
 	.navbar-brand
 		img
 			max-width 150px
+	.navbar-default
+		.navbar-collapse
+			margin-top 0
 // @media (min-width: 768px)
 // 	.js-header
 // 		background-color transparent
 // 		&.navbarcolor
 // 			background-color #425563
+@media (max-width: 768px)
+	.js-fondo
+		&.fondo1
+			background url(../img/fondo/fondo1_mobile.jpg) no-repeat center center
 @media (max-width: 600px)
 	.js-contenido
 		padding 20px
@@ -690,7 +595,6 @@ table
 	.dataTables_info
 	.dataTables_paginate
 		margin 20px 0 !important
-	.jm-book
-		img 
-			height 185px
+	.js-fondo
+		background-position right !important
 			

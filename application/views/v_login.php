@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
         <meta name="viewport"               content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta name="description"            content="HPE Siguiendo Tormentas">
-        <meta name="keywords"               content="HPE Siguiendo Tormentas">
+        <meta name="description"            content="HPE Just Right IT">
+        <meta name="keywords"               content="HPE Just Right IT">
         <meta name="robots"                 content="Index,Follow">
         <meta name="date"                   content="December 15, 2018"/>
         <meta name="language"               content="en">
         <meta name="theme-color"            content="#425563">
-        <title>HPE Siguiendo Tormentas</title>
+        <title>HPE Just Right IT</title>
     	<link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.ico">
     	<link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">

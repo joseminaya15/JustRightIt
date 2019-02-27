@@ -4,23 +4,25 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge">
     <meta name="viewport"               content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description"            content="HPE Siguiendo Tormentas">
-    <meta name="keywords"               content="HPE Siguiendo Tormentas">
+    <meta name="description"            content="HPE Just Right IT">
+    <meta name="keywords"               content="HPE Just Right IT">
     <meta name="robots"                 content="Index,Follow">
     <meta name="date"                   content="December 15, 2018"/>
     <meta name="language"               content="en">
     <meta name="theme-color"            content="#425563">
-	<title>HPE Siguiendo Tormentas</title>
+	<title>HPE Just Right IT</title>
     <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.ico">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap/css/bootstrap.min.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>datetimepicker/css/bootstrap-material-datetimepicker.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>owl-carousel/owl.carousel.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>owl-carousel/owl.theme.default.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
 </head>
 <body>
@@ -48,6 +50,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item active"><a class="link" href="#home">Inicio</a></li>
                     <li class="nav-item"><a class="link" href="#register">Registro</a></li>
+                    <li class="nav-item"><a class="link" href="#login">Acceso Registrados</a></li>
                 </ul>
             </div>
         </div>
@@ -63,13 +66,17 @@
             <div class="item">
                 <div class="js-fondo fondo3"></div>
             </div>
+            <div class="item">
+                <div class="js-fondo fondo4"></div>
+            </div>
         </div>
         <div class="js-container">
             <div class="js-home js-flex">
                 <div class="js-contenido">
-                    <h2>Quieres ser parte del equipo ganador?</h2>
-                    <p>Del 17 al 21 de Marzo</p>
-                    <p>Ciudad, País</p>
+                    <h2>"T&uacute; aceptas los retos sin pesta&ntilde;ear?"</h2>
+                    <p>Para nosotros tú eres un VIP, te invitamos a ser parte del equipo ganador.</p>
+                    <p>Jueves 25 de Abril</p>
+                    <p>San Jos&eacute;, Costa Rica</p>
                     <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
                 </div>
             </div>
@@ -87,9 +94,21 @@
                 <img src="<?php echo RUTA_IMG?>logo/logo-orbe.png">
             </div> -->
             <div class="js-title">
-                <h2>Reg&iacute;strese completando el siguiente formulario</h2>
+                <h2>REG&Iacute;STRESE AHORA</h2>
             </div>
             <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                     <div class="js-input">
+                        <label for="text">Empresa*</label>
+                        <input type="text" id="company" >
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                     <div class="js-input">
+                        <label for="text">Direccion F&iacute;sica de la Empresa*</label>
+                        <input type="text" id="direccion" >
+                    </div>
+                </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
                         <label for="text">Nombre*</label>
@@ -104,7 +123,13 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
-                        <label for="text">Email*</label>
+                        <label for="text">Cargo*</label>
+                        <input type="text" id="position">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="js-input">
+                        <label for="text">Email Corporativo*</label>
                         <input type="text" id="email" >
                     </div>
                 </div>
@@ -115,99 +140,70 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                     <div class="js-input">
-                        <label for="text">Empresa*</label>
-                        <input type="text" id="company" >
+                    <div class="js-input js-date js-flex">
+                        <input class="js-disabled" type="text" id="birthday" name="birthday" maxlength="10" placeholder="Fecha de cumpleaños*" value="" style="pointer-events: none" disabled>
+                        <div class="js-icon">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="mdi mdi-date_range"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
-                        <label for="text">Cargo*</label>
-                        <input type="text" id="position">
+                        <label for="text">Deporte que le gusta*</label>
+                        <input type="text" id="deporte">
                     </div>
                 </div>
-                <div class="col-xs-12 text-center jm-subtitle">
-                    <p>Parte de la filosofia de <strong style="font-weight: 100;">Componentes El Orbe</strong> es compartir conocimiento por lo que queremos  obsequiarle a los 40
-                    primeros registrados un libro de esta coleccion de reciente lanzamiento. Marque el de su preferencia el cual se le entregara en el evento.</p>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="js-input js-select">
+                        <select name="comercializa" id="comercializa" title="Que marcas comercializa tu empresa? (Más de una)" multiple> 
+                            <option value="HPE">HPE</option>
+                            <option value="ARUBA Networks">ARUBA Networks</option>
+                            <option value="CISCO">CISCO</option>
+                            <option value="DELL/EMC">DELL/EMC</option>
+                            <option value="NUTANIX">NUTANIX</option>
+                            <option value="NETAPP">NETAPP</option>
+                            <option value="PURE STORAGE">PURE STORAGE</option>
+                            <option value="UBIQUITI">UBIQUITI</option>
+                        </select>
+                    </div>
                 </div>
-                <!-- <div class="col-xs-12">
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
-                        <div class="jm-book__flip">
-                            <div class="jm-book__front">
-                                <img src="<?php echo RUTA_IMG?>logo/book1.png">
-                            </div>
-                            <div class="jm-book__back">
-                                <h2>Irresistible</h2>
-                                <p>En su revolucionario libro, el profesor de Psicolog&iacute;a y Marketing de la Universidad de Nueva York Adam Alter analiza el auge de las 
-                                adicciones del comportamiento y explica por qu&eacute; tantos de los productos que consumimos hoy d&iacute;a son irresistibles. Estos milagrosos productos 
-                                tienen el poder de acortar las distancias que nos separan de las personas de cualquier parte del mundo, pero su extraordinario —y en 
-                                ocasiones perjudicial— magnetismo no es fruto de la casualidad. Las empresas que dise&ntilde;an estos productos los ajustan y reajustan hasta que 
-                                logran que sea pr&aacute;cticamente imposible resistirse a ellos.</p>
-                                <button id="book1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
-                            </div>
-                        </div>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1">
-                        </label>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="js-input js-select">
+                        <select name="description" id="description" title="Selecciona opciones que describan mejor a tu compañía (Más de una)." multiple> 
+                            <option value="Venta, instalación y Reparación de equipo de cómputo.">Venta, instalación y Reparación de equipo de cómputo.</option>
+                            <option value="Venta de sistemas especiales (sistema de videovigilancia y seguridad, alarmas e incendio, paneles solares).">Venta de sistemas especiales (sistema de videovigilancia y seguridad, alarmas e incendio, paneles solares).</option>
+                            <option value="Desarrolladores de software e integradores.">Desarrolladores de software e integradores.</option>
+                            <option value="Venta, instalación y reparación de equipo de impresión.">Venta, instalación y reparación de equipo de impresión.</option>
+                            <option value="Venta e instalación de cableado estructurado, fibra óptica y/o datacenter.">Venta e instalación de cableado estructurado, fibra óptica y/o datacenter</option>
+                            <option value="Venta e instalación de sistema de potencia, aires de precisión, sistema de confinamiento.">Venta e instalación de sistema de potencia, aires de precisión, sistema de confinamiento.</option>
+                            <option value="Venta de soluciones en comunicaciones e inalámbricas.">Venta de soluciones en comunicaciones e inalámbricas.</option>
+                        </select>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
-                        <div class="jm-book__flip">
-                            <div class="jm-book__front">
-                                <img src="<?php echo RUTA_IMG?>logo/book2.png">                                
-                            </div>
-                            <div class="jm-book__back">
-                                <h2>S&aacute;lvese quien pueda!</h2>
-                                <p>Manteni&eacute;ndose fiel a su caracter&iacute;stico estilo period&iacute;stico, Andr&eacute;s Oppenheimer lleva a sus lectores en un nuevo viaje, esta vez a trav&eacute;s del mundo, 
-                                con la intenci&oacute;n de comprender cu&aacute;l ser&aacute; el futuro de los trabajos de hoy en el d&iacute;a, mientras se aproxima lo que muchos han denominado como la era de 
-                                la automatizaci&oacute;n.</p>
-                                <button id="book2" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
-                            </div>
-                        </div>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="1">
-                        </label>                
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
-                        <div class="jm-book__flip">
-                            <div class="jm-book__front">
-                                <img src="<?php echo RUTA_IMG?>logo/book3.jpg">
-                            </div>
-                            <div class="jm-book__back">
-                                <h2>Vida 3.0</h2>
-                                <p>El cosm&oacute;logo Max Tegmark (Estocolmo, 1967) director del Future of Life Institute (MIT, en Cambridge, Estados Unidos), es autor de un texto muy importante: “Vida 3.0. 
-                                Ser humano en la era de la inteligencia artificial”. En &eacute;l, habla de las oportunidades que la Inteligencia Artificial puede presentar a los seres humanos; pero, tambi&eacute;n, 
-                                de los enormes riesgos que provienen de descartar el factor humano de la vida en el planeta.</p>
-                                <button id="book3" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
-                            </div>
-                        </div>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                            <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="1">
-                        </label>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
-                        <div class="jm-book__flip">
-                            <div class="jm-book__front">
-                                <img src="<?php echo RUTA_IMG?>logo/book4.jpg">
-                            </div>
-                            <div class="jm-book__back">
-                                <h2>El Futuro de la Humanidad</h2>
-                                <p>El Dr. Kaku nos presenta a lo largo de estas p&aacute;ginas a robots autoreplicantes, nanomateriales y cultivos de bioingenier&iacute;a que permitir&aacute;n a la humanidad 
-                                terraformar Marte; las naves nanom&eacute;tricas, las velas l&aacute;ser, las m&aacute;quinas de fusi&oacute;n ram-jet, los motores antimateria y los cohetes hiperimpulsores que 
-                                nos llevar&aacute;n a las estrellas; y las tecnolog&iacute;as radicales que alteran el cuerpo que nos permitir&aacute;n sobrevivir al largo y agotador viaje de conquista del espacio</p>
-                                <button id="book4" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
-                            </div>
-                        </div>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                            <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="1">
-                        </label>
-                    </div>
-                </div> -->
+                </div>
             </div>
             <div class="js-section--button text-center">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-login" onclick="sendInformation()">Enviar</button>
             </div>
             <div id="confirmation" class="js-confirmation">
                 <h2>Registro realizado correctamente. Lo esperamos</h2>
+            </div>
+        </div>
+    </section>
+    <section id="login" class="js-section jm-white">
+        <div class="js-container">
+            <h2 class="js-title">ACCESO REGISTRADOS</h2>
+            <p class="text-center">Si usted ya se encuentra registrado, ingrese su email para realizar un quiz y ganar grandes premios.</p>
+            <div class="js-input js-input--default">
+                <label for="text">Email*</label>
+                <input type="text" id="correo" onkeyup="verificarDatos(event);">
+            </div>
+            <div class="js-reserva text-center">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-login" onclick="ingresar(1)">Empezar Quiz</button>
+            </div>
+            <div id="registered" class="js-confirmation">
+                <h2>Registro completado. ¡Nos vemos en Houston!</h2>
             </div>
         </div>
     </section>
@@ -245,19 +241,19 @@
     <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/i18n/defaults-es_ES.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>owl-carousel/owl.carousel.min.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_PLUGINS?>moment/moment.min.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_PLUGINS?>datetimepicker/js/bootstrap-material-datetimepicker.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_JS?>jsmenu.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>jsindex.js?v=<?php echo time();?>"></script>
     <script type="text/javascript">
-        // var URLactual = window.location;
-        // if(URLactual['href'] != 'http://www.marketinghp.net/microsite/DCN/evento_cr/'){
-        //     location.href = 'http://www.marketinghp.net/microsite/DCN/evento_cr/';
-        // }
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
             $('select').selectpicker('mobile');
         } else {
             $('select').selectpicker();
         }
+        initButtonCalendarDaysMaxToday('birthday');
     </script>
 </body>
 </html>
