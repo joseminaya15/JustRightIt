@@ -14,12 +14,17 @@ class M_Datos extends  CI_Model{
         }
         return array("error" => EXIT_SUCCESS, "msj" => MSJ_INS, "Id" => $sql);
     }
-
     function existCorreo($correo){
         $sql = "SELECT email
                   FROM contact
                   WHERE email = ?";
         $result = $this->db->query($sql, array($correo));
+        return $result->result();
+    }
+    function getDatosCorreos() {
+        $sql = "SELECT email
+                  FROM contact";
+        $result = $this->db->query($sql);
         return $result->result();
     }
 }

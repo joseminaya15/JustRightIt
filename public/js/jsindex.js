@@ -35,18 +35,20 @@ $('#home .owl-carousel').owlCarousel({
 	dots: false,
 	autoplayTimeout : 3000
 });
+var arrayComercializa  = [];
+var arrayCompany       = [];
 function sendInformation(){
 	var company 	 = $('#company').val();
-	var direccion  	 = $('#direccion').val();
+	var direccion  	 = $('#address').val();
 	var name 		 = $('#name').val();
 	var surname 	 = $('#surname').val();
 	var position 	 = $('#position').val();
 	var email 		 = $('#email').val();
 	var phone 		 = $('#phone').val();
 	var birthday     = $('#birthday').val();
-	var deporte      = $('#deporte').val();
-	var comercializa = $('#comercializa').val();
-	var description  = $('#description').val();
+	var deporte      = $('#sport').val();
+	// var comercializa = $('#commercialization').val();
+	// var description  = $('#description').val();
 	if(company == null || company == '') {
 		msj('error', 'Empresa debe completarse');
 		return;
@@ -76,9 +78,9 @@ function sendInformation(){
 		return;
 	}
 	if(validateEmailCorporative(email)){
-		msj('error', 'Ingrese un email corporativo');
-	  	return;
-  	}
+      	msj('error', 'Ingrese un email corporativo');
+		return;
+	}
 	if(phone == null || phone == '') {
 		msj('error', 'Teléfono debe completarse');
 		return;
@@ -91,16 +93,28 @@ function sendInformation(){
 		msj('error', 'Deporte debe completarse');
 		return;
 	}
-	if(comercializa == null || comercializa == '') {
-		msj('error', 'Seleccione una marca que comercialice su empresa');
-		return;
-	}
-	if(description == null || description == '') {
-		msj('error', 'Seleccione que describe mejor a tu empresa');
-		return;
-	}
-	comercializa = (comercializa == null) ? '' : comercializa.toString();
-	description  = (description == null) ? '' : description.toString();
+	$(".jm-checkbox--comercializa .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('input');
+		var idChecked  = inputChecked.attr('id');
+		arrayComercializa.push(idChecked);
+	});
+	$(".jm-checkbox--company .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('.mdl-checkbox__label');
+		var textChecked  = inputChecked.text();
+		arrayCompany.push(textChecked);
+	})
+	arrayComercializa = (arrayComercializa == null) ? '' : arrayComercializa.toString();
+	arrayCompany  = (arrayCompany == null) ? '' : arrayCompany.toString();
+	// if(arrayComercializa == null || arrayComercializa == '') {
+	// 	msj('error', 'Seleccione una marca que comercialice su empresa');
+	// 	return;
+	// }
+	// if(arrayCompany == null || arrayCompany == '') {
+	// 	msj('error', 'Seleccione que describe mejor a tu empresa');
+	// 	return;
+	// }
 	$.ajax({
 		data : {Company      : company,
 			    Direccion    : direccion,
@@ -111,8 +125,8 @@ function sendInformation(){
 				Phone	     : phone,
 				Birthday	 : birthday,
 				Deporte   	 : deporte,
-				Comercializa : comercializa,
-				Description  : description},
+				Comercializa : arrayComercializa,
+				Description  : arrayCompany},
 		url  : 'home/register',
 		type : 'POST'
 	}).done(function(data){
@@ -120,8 +134,10 @@ function sendInformation(){
 			data = JSON.parse(data);
 			if(data.error == 0){
 				$('.js-input').find('input').val('');
-				$('.js-input').find('select').val('0');
-				$('.js-input').find('select').selectpicker('refresh');
+				$('.js-checkbox').find('.mdl-checkbox').removeClass('is-checked');
+				$('.js-checkbox').find('input').prop("checked", false);
+				arrayComercializa  = [];
+				arrayCompany       = [];
 				msj('success', data.msj);
         	}else{
         		msj('error', data.msj);
@@ -130,6 +146,35 @@ function sendInformation(){
 		} catch (err) {
 			msj('error', err.message);
 		}
+	});
+}
+function ingresarQuiz(){
+	var correo = $('#emailRegister').val(); 
+	if(correo == null || correo == '') {
+		msj('error', 'Email debe completarse');
+		return;
+	}
+	if(!validateEmail(correo)){
+		msj('error', 'El formato de email es incorrecto');
+		return;
+	}
+	$.ajax({
+		data  : { correo : correo},
+		url   : 'home/ingresar',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+        	data = JSON.parse(data);
+        	if(data.error == 0){
+				$('#emailRegister').val("");
+				$('#ModalQuiz').modal('show');
+        	}else {
+				msj('error', 'Email no registrado');
+        		return;
+        	}
+      } catch (err){
+        msj('error',err.message);
+      }
 	});
 }
 function validateEmail(email){
@@ -143,6 +188,6 @@ function validateEmailCorporative(email){
 function verificarDatos(e) {
 	if(e.keyCode === 13){
 		e.preventDefault();
-		ingresar();
+		ingresarQuiz();
     }
 }

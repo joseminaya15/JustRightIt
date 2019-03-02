@@ -120,4 +120,24 @@ class Home extends CI_Controller {
 		}
 		return json_encode(array_map('utf8_encode', $data));
 	}
+	function ingresar() {
+		$data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+         try {
+			$correo   = $this->input->post('correo');
+			$username = $this->M_Datos->getDatosCorreos();
+			if(count($username) != 0) {
+				foreach ($username as $key) {
+					if ($key->email == $correo) {
+						$session = array('email' => $key->email);
+                        $this->session->set_userdata($session);
+						$data['error'] = EXIT_SUCCESS;
+					}
+				}
+			}
+        }catch(Exception $e) {
+           $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+	}
 }

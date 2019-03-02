@@ -29,7 +29,7 @@ class Admin extends CI_Controller {
                             <td class="text-right">'.$key->telefono.'</td>
                             <td class="text-left">'.$key->birthday.'</td>
                             <td class="text-left">'.$key->deporte.'</td>
-                            <td class="text-left">'.$key->comercializa.'</td>
+                            <td class="text-left">'.$key->comercializacion.'</td>
                             <td class="text-left">'.$key->descripcion.'</td>
                             <td class="text-center">'.$key->fecha.'</td>
                         </tr>';

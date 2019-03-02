@@ -40,13 +40,17 @@
                         <table id="example" class="display nowrap table table-bordered table-hover dt-responsive" cellspacing="0" width="100%">
                             <thead>
                                 <tr class="tr-header-reporte">
+                                    <th class="text-left">Empresa</th>
+                                    <th class="text-left">Direccion</th>
                                     <th class="text-left">Nombre</th>
                                     <th class="text-left">Apellido</th>
+                                    <th class="text-left">Cargo</th>
                                     <th class="text-left">Email</th>
                                     <th class="text-right">Tel&eacute;fono</th>
-                                    <th class="text-left">Empresa</th>
-                                    <th class="text-left">Cargo</th>
-                                    <th class="text-left">Libro</th>
+                                    <th class="text-left">Cumplea&ntilde;os</th>
+                                    <th class="text-left">Deporte</th>
+                                    <th class="text-left">Comercializaci&oacute;n</th>
+                                    <th class="text-left">Descripci&oacute;n</th>
                                     <th class="text-center">Fecha</th>
                                 </tr>
                             </thead>

@@ -22,7 +22,6 @@
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
-    <link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
 </head>
 <body>
@@ -75,8 +74,6 @@
                 <div class="js-contenido">
                     <h2>"T&uacute; aceptas los retos sin pesta&ntilde;ear?"</h2>
                     <p>Para nosotros tú eres un VIP, te invitamos a ser parte del equipo ganador.</p>
-                    <p>Jueves 25 de Abril</p>
-                    <p>San Jos&eacute;, Costa Rica</p>
                     <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
                 </div>
             </div>
@@ -84,15 +81,12 @@
     </section>
     <section id="register" class="js-section">
         <div class="js-container">
-            <!-- <div class="js-information">
-                <h1>El ORBE ofrece a sus clientes soluciones tecnol&oacute;gicas innovadoras, basadas en el portafolio de l&iacute;deres de la industria como HPE y SAS, para apoyarles en su proceso de transformaci&oacute;n y en su capacidad para tomar mejores decisiones y generar mayores resultados para su negocio.</h1>
-                <h2>Jueves 7 de Febrero, 2019</h2>
+            <div class="js-information">
+                <h2>Jueves 25 de Abril, 2019</h2>
                 <h3>Hora de inicio: 4:00 p.m.</h3>
-                <p>K'abel Sala de eventos</p>
-                <span>6A Avenida 9-18 zona 10, Edificio Sixtino2 nivel 10, Ciudad de Guatemala</span>
-                <h4>Un evento de</h4>
-                <img src="<?php echo RUTA_IMG?>logo/logo-orbe.png">
-            </div> -->
+                <p>Costa Rica Beer Factory</p>
+                <span>Barrio Escalante, 100mts sur de Fresh Market o 600mts norte de Bagelmen´s, Calle 33, San Jos&eacute;</span>
+            </div>
             <div class="js-title">
                 <h2>REG&Iacute;STRESE AHORA</h2>
             </div>
@@ -106,7 +100,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4">
                      <div class="js-input">
                         <label for="text">Direccion F&iacute;sica de la Empresa*</label>
-                        <input type="text" id="direccion" >
+                        <input type="text" id="address" >
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -130,7 +124,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
                         <label for="text">Email Corporativo*</label>
-                        <input type="text" id="email" >
+                        <input type="text" id="email">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -152,34 +146,217 @@
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
                         <label for="text">Deporte que le gusta*</label>
-                        <input type="text" id="deporte">
+                        <input type="text" id="sport">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="js-input js-select">
-                        <select name="comercializa" id="comercializa" title="Que marcas comercializa tu empresa? (Más de una)" multiple> 
-                            <option value="HPE">HPE</option>
-                            <option value="ARUBA Networks">ARUBA Networks</option>
-                            <option value="CISCO">CISCO</option>
-                            <option value="DELL/EMC">DELL/EMC</option>
-                            <option value="NUTANIX">NUTANIX</option>
-                            <option value="NETAPP">NETAPP</option>
-                            <option value="PURE STORAGE">PURE STORAGE</option>
-                            <option value="UBIQUITI">UBIQUITI</option>
-                        </select>
+                <div class="col-xs-12">
+                    <div class="jm-card--checkbox">
+                        <p>- Que marcas comercializa tu empresa? (Escoger m&aacute;s de una opci&oacute;n)</p>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>SERVERS</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="SERVERS-HPE">
+                                    <input type="checkbox" id="SERVERS-HPE" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HPE</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="SERVERS-DELL">
+                                    <input type="checkbox" id="SERVERS-DELL" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">DELL</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="SERVERS-CISCO">
+                                    <input type="checkbox" id="SERVERS-CISCO" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">CISCO</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="SERVERS-LENOVO">
+                                    <input type="checkbox" id="SERVERS-LENOVO" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">LENOVO</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="SERVERS-HUAWEI">
+                                    <input type="checkbox" id="SERVERS-HUAWEI" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HUAWEI</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>STORAGE</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="STORAGE-HPE">
+                                    <input type="checkbox" id="STORAGE-HPE" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HPE</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="STORAGE-NETAPP">
+                                    <input type="checkbox" id="STORAGE-NETAPP" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">NETAPP</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="STORAGE-PURESTORAGE">
+                                    <input type="checkbox" id="STORAGE-PURESTORAGE" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">PURESTORAGE</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="STORAGE-DELL/EMC">
+                                    <input type="checkbox" id="STORAGE-DELL/EMC" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">DELL/EMC</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>WIRELESS</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-HPEARUBA">
+                                    <input type="checkbox" id="WIRELESS-HPEARUBA" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HPE ARUBA</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-CISCOMERAKI">
+                                    <input type="checkbox" id="WIRELESS-CISCOMERAKI" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">CISCO MERAKI</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-WIFIUBIQUITI">
+                                    <input type="checkbox" id="WIRELESS-WIFIUBIQUITI" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">WIFI UBIQUITI</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-DELLNETWORKING">
+                                    <input type="checkbox" id="WIRELESS-DELLNETWORKING" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">DELL NETWORKING</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-RUCKUS">
+                                    <input type="checkbox" id="WIRELESS-RUCKUS" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">RUCKUS</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="WIRELESS-LINKSYS">
+                                    <input type="checkbox" id="WIRELESS-LINKSYS" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">LINKSYS</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>HYPERCONVERGENCIA</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-SIMPLIVITY">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-SIMPLIVITY" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HPE SIMPLIVITY</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-CISCO">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-CISCO" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">CISCO</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-DELLVXRAIL">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-DELLVXRAIL" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">DELL VXRAIL</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-NETAPPHC">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-NETAPPHC" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">NETAPP HC</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-NUTANIX">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-NUTANIX" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">NUTANIX</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-VMWAREVSAN">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-VMWAREVSAN" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">VMWARE VSAN</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-LENOVO">
+                                    <input type="checkbox" id="lenovo" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">LENOVO</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--comercializa">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="HYPERCONVERGENCIA-HUAWEI">
+                                    <input type="checkbox" id="HYPERCONVERGENCIA-HUAWEI" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">HUAWEI</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <div class="js-input js-select">
-                        <select name="description" id="description" title="Selecciona opciones que describan mejor a tu compañía (Más de una)." multiple> 
-                            <option value="Venta, instalación y Reparación de equipo de cómputo.">Venta, instalación y Reparación de equipo de cómputo.</option>
-                            <option value="Venta de sistemas especiales (sistema de videovigilancia y seguridad, alarmas e incendio, paneles solares).">Venta de sistemas especiales (sistema de videovigilancia y seguridad, alarmas e incendio, paneles solares).</option>
-                            <option value="Desarrolladores de software e integradores.">Desarrolladores de software e integradores.</option>
-                            <option value="Venta, instalación y reparación de equipo de impresión.">Venta, instalación y reparación de equipo de impresión.</option>
-                            <option value="Venta e instalación de cableado estructurado, fibra óptica y/o datacenter.">Venta e instalación de cableado estructurado, fibra óptica y/o datacenter</option>
-                            <option value="Venta e instalación de sistema de potencia, aires de precisión, sistema de confinamiento.">Venta e instalación de sistema de potencia, aires de precisión, sistema de confinamiento.</option>
-                            <option value="Venta de soluciones en comunicaciones e inalámbricas.">Venta de soluciones en comunicaciones e inalámbricas.</option>
-                        </select>
+                    <div class="jm-card--checkbox">
+                        <p>- Que describe mejor a tu compa&ntilde;ia? (Escoger m&aacute;s de una opci&oacute;n)</p>
+                        <div class="jm-list--checkbox">
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-1">
+                                    <input type="checkbox" id="option-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta, instalación y Reparaci&oacute;n de equipo de c&oacute;mputo.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-2">
+                                    <input type="checkbox" id="option-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta de sistemas especiales (sistema de videovigilancia y seguridad, alarmas e incendio, paneles solares).</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-3">
+                                    <input type="checkbox" id="option-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Desarrolladores de software e integradores.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-4">
+                                    <input type="checkbox" id="option-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta, instalación y reparación de equipo de impresión.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-5">
+                                    <input type="checkbox" id="option-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta e instalación de cableado estructurado, fibra óptica y/o datacenter.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-6">
+                                    <input type="checkbox" id="option-6" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta e instalación de sistema de potencia, aires de precisión, sistema de confinamiento.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox max-width jm-checkbox--company">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-7">
+                                    <input type="checkbox" id="option-7" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Venta de soluciones en comunicaciones e inalámbricas.</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,10 +374,10 @@
             <p class="text-center">Si usted ya se encuentra registrado, ingrese su email para realizar un quiz y ganar grandes premios.</p>
             <div class="js-input js-input--default">
                 <label for="text">Email*</label>
-                <input type="text" id="correo" onkeyup="verificarDatos(event);">
+                <input type="text" id="emailRegister" onkeyup="verificarDatos(event);">
             </div>
             <div class="js-reserva text-center">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-login" onclick="ingresar(1)">Empezar Quiz</button>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-login" onclick="ingresarQuiz()">Empezar Quiz</button>
             </div>
             <div id="registered" class="js-confirmation">
                 <h2>Registro completado. ¡Nos vemos en Houston!</h2>
@@ -214,20 +391,199 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="ModalLibro" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-		<div class="modal-dialog modal-sm jm-modal" role="document">
+    <div class="modal fade" id="ModalQuiz" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-md jm-modal" role="document">
 			<div class="modal-content">
 				<div class="mdl-card">
-					<div class="mdl-card__title p-b-0">
-						<h2></h2>
+					<div class="mdl-card__title">
+						<h2>¡Gracias por ser parte de la comunidad HPE! </h2>
+                        <p>Responde las siguientes preguntas y participa por grandes premios.<p>
 					</div>
 					<div class="mdl-card__supporting-text p-t-0">
-						<p></p>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>1. Que ofrece HPE Simplivity HyperGuarantee?</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question1-1">
+                                    <input type="checkbox" id="question1-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">A. Copias de seguridad en una hora.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question1-2">
+                                    <input type="checkbox" id="question1-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">B. Garantia de fabrica basica de 72 meses.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question1-3">
+                                    <input type="checkbox" id="question1-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">C. Un ahorro de capacidad del 90 % en almacenamiento y copia de seguridad combinados en relaci&oacute;n con las soluciones tradicionales comparables.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question1-4">
+                                    <input type="checkbox" id="question1-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">D. Capacidad de copia de seguridad integrada, llevar&aacute; menos de un minuto, de media, en completar una copia de seguridad local o una restauraci&oacute;n local de una m&aacute;quina virtual de 1 TB.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question1-5">
+                                    <input type="checkbox" id="question1-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. Soporta el hypervisor Acropolis.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>2. Que bondades tiene la soluci&oacute;n de software Infosight?</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question2-1">
+                                    <input type="checkbox" id="question2-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">A. Disponibilidad de 6 nueves (99.9999%).</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question2-2">
+                                    <input type="checkbox" id="question2-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">B. Elimina el soporte nivel 1 y 2.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question2-3">
+                                    <input type="checkbox" id="question2-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">C. Acceso a llamada de soporte nivel 3 en menos de 10 minutos.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question2-4">
+                                    <input type="checkbox" id="question2-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">D. Disponibilidad de 5 nueves (99.999%).</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question2-5">
+                                    <input type="checkbox" id="question2-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. Acceso a llamada de soporte nivel 3 en menos de 1 minuto.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>3. Que productos son parte del portafolio de software de Aruba?</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-1">
+                                    <input type="checkbox" id="question3-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">A. Aruba ClearPass.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-2">
+                                    <input type="checkbox" id="question3-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">B. Aruba Airwave.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-3">
+                                    <input type="checkbox" id="question3-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">C. Aruba Central.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-4">
+                                    <input type="checkbox" id="question3-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">D. Aruba Introspect.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-5">
+                                    <input type="checkbox" id="question3-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. Aruba Meridian.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question3-6">
+                                    <input type="checkbox" id="question3-6" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. Aruba NetInsight.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>4. Cual es la diferencia en contratar entre estos dos servicios de HPE PointNext : Proactive Care VS Proactive Advanced?</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-1">
+                                    <input type="checkbox" id="question4-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">A. 1 ingeniero asignado VS. 2 ingenieros asignados.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-2">
+                                    <input type="checkbox" id="question4-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">B. 1 Ingeniero remoto asignado VS. 1 ingeniero asignado local.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-3">
+                                    <input type="checkbox" id="question4-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">C. Asistencia via telefonica en un tiempo de respuesta de 4hrs.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-4">
+                                    <input type="checkbox" id="question4-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">D. Dimensionamiento de espacio para futuras configuraciones dentro del Datacenter.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-5">
+                                    <input type="checkbox" id="question4-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. Establecimiento de distintos equipos en misi&oacute;n critica dentro y fuera de la red.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="jm-list--checkbox">
+                            <div class="jm-title--checlbox">
+                                <h2>5. Cuales son las ventajas competitivas de HPE Nimble Storage?</h2>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-1">
+                                    <input type="checkbox" id="question5-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">A. Disponibilidad 99.9999%.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-2">
+                                    <input type="checkbox" id="question5-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">B. xxxxxx.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-3">
+                                    <input type="checkbox" id="question5-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">C. xxxxxx.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-4">
+                                    <input type="checkbox" id="question5-4" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">D. xxxxxx.</span>
+                                </label>
+                            </div>
+                            <div class="js-checkbox jm-checkbox--quiz max-width">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-5">
+                                    <input type="checkbox" id="question5-5" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">E. xxxxxx.</span>
+                                </label>
+                            </div>
+                        </div>
 					</div>
-                    <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-js-button mdl-button--icon" data-dismiss="modal">
-                            <i class="mdi mdi-close"></i>
-                        </button>
+                    <div class="mdl-card__actions text-right">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button">Enviar Quiz</button>
                     </div>
 				</div>
 			</div>
