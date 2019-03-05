@@ -30,8 +30,6 @@ class Home extends CI_Controller {
 			$telefono	    = $this->input->post('Phone');
 			$birthday 	    = implode("-", array_reverse(explode("/", $this->input->post('Birthday'))));
 			$deporte	    = $this->input->post('Deporte');
-			$comercializa   = $this->input->post('Comercializa');
-			$descripcion    = $this->input->post('Description');
 			$existe         = $this->M_Datos->existCorreo($correo);
 			$fecha          = date('Y-m-d');
 			if(count($existe) != 0) {
@@ -47,8 +45,6 @@ class Home extends CI_Controller {
 										   	'telefono'         => $telefono,
 										   	'birthday'         => $birthday,
 										   	'deporte'          => $deporte,
-										   	'comercializacion' => $comercializa,
-										   	'descripcion'      => $descripcion,
 										   	'fecha'            => $fecha);
 				$datoInsert  = $this->M_Datos->insertarDatos($insertParticipante,'contact');
 				// $this->sendConfirmation($correo);
@@ -139,5 +135,32 @@ class Home extends CI_Controller {
            $data['msj'] = $e->getMessage();
         }
         echo json_encode($data);
+	}
+	function quiz(){
+		$data['error'] = EXIT_ERROR;
+      	$data['msj']   = null;
+		try {
+			$pregunta1  = $this->input->post('Pregunta1');
+			$pregunta2  = $this->input->post('Pregunta2');
+			$pregunta3  = $this->input->post('Pregunta3');
+			$pregunta4  = $this->input->post('Pregunta4');
+			$pregunta5  = $this->input->post('Pregunta5');
+			$pregunta6  = $this->input->post('Pregunta6');
+			$pregunta7  = $this->input->post('Pregunta7');
+			$correo     = $this->session->userdata('email');
+			$actualizarParticipante = array('pregunta1' 	=> $pregunta1,
+											'pregunta2' 	=> $pregunta2,
+											'pregunta3' 	=> $pregunta3,
+											'pregunta4' 	=> $pregunta4,
+											'pregunta5' 	=> $pregunta5,
+											'pregunta6' 	=> $pregunta6,
+											'pregunta7'     => $pregunta7);
+			$datoInsert  = $this->M_Datos->actualizarDatos($correo,'participante', $actualizarParticipante);
+          	$data['msj']   = $datoInsert['msj'];
+          	$data['error'] = $datoInsert['error'];
+		} catch(Exception $ex) {
+			$data['msj'] = $ex->getMessage();
+		}
+      	echo json_encode($data);
 	}
 }

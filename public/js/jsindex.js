@@ -18,25 +18,13 @@ $('a.link[href^="#"]').click(function(e) {
  		scrollTop : (y - 40)
  	}, 'slow');
 });
-$('#home .owl-carousel').owlCarousel({
-	lazyLoad : true,
-	animateOut: 'fadeOut',
-	animateIn: 'fadeIn',
-	responsive : {
-		0 : {
-			items : 1
-		}
-	},
-	navigation : false,
-	nav : false,
-	loop : true,
-	autoplay : true,
-	mouseDrag: false,
-	dots: false,
-	autoplayTimeout : 3000
-});
-var arrayComercializa  = [];
-var arrayCompany       = [];
+var pregunta1  = [];
+var pregunta2  = [];
+var pregunta3  = [];
+var pregunta4  = [];
+var pregunta5  = [];
+var pregunta6  = [];
+var pregunta7  = [];
 function sendInformation(){
 	var company 	 = $('#company').val();
 	var direccion  	 = $('#address').val();
@@ -89,10 +77,6 @@ function sendInformation(){
 		msj('error', 'Cumpleaños debe completarse');
 		return;
 	}
-	if(deporte == null || deporte == '') {
-		msj('error', 'Deporte debe completarse');
-		return;
-	}
 	$(".jm-checkbox--comercializa .is-checked").each(function (){
 		var isChecked    = $(this);
 		var inputChecked = isChecked.find('input');
@@ -105,8 +89,13 @@ function sendInformation(){
 		var textChecked  = inputChecked.text();
 		arrayCompany.push(textChecked);
 	})
-	arrayComercializa = (arrayComercializa == null) ? '' : arrayComercializa.toString();
-	arrayCompany  = (arrayCompany == null) ? '' : arrayCompany.toString();
+	pregunta1 = (pregunta1 == null) ? '' : pregunta1.toString();
+	pregunta2 = (pregunta2 == null) ? '' : pregunta2.toString();
+	pregunta3 = (pregunta3 == null) ? '' : pregunta3.toString();
+	pregunta4 = (pregunta4 == null) ? '' : pregunta4.toString();
+	pregunta5 = (pregunta5 == null) ? '' : pregunta5.toString();
+	pregunta6 = (pregunta6 == null) ? '' : pregunta6.toString();
+	pregunta7 = (pregunta7 == null) ? '' : pregunta7.toString();
 	// if(arrayComercializa == null || arrayComercializa == '') {
 	// 	msj('error', 'Seleccione una marca que comercialice su empresa');
 	// 	return;
@@ -124,9 +113,7 @@ function sendInformation(){
 				Email 	     : email,
 				Phone	     : phone,
 				Birthday	 : birthday,
-				Deporte   	 : deporte,
-				Comercializa : arrayComercializa,
-				Description  : arrayCompany},
+				Deporte   	 : deporte},
 		url  : 'home/register',
 		type : 'POST'
 	}).done(function(data){
@@ -139,6 +126,7 @@ function sendInformation(){
 				arrayComercializa  = [];
 				arrayCompany       = [];
 				msj('success', data.msj);
+				$('#confirmation').addClass('aparecer');
         	}else{
         		msj('error', data.msj);
         		return;
@@ -172,9 +160,35 @@ function ingresarQuiz(){
 				msj('error', 'Email no registrado');
         		return;
         	}
-      } catch (err){
-        msj('error',err.message);
-      }
+		} catch (err){
+			msj('error',err.message);
+		}
+	});
+}
+function sendQuiz(){
+	$.ajax({
+		data : {Pregunta1   : pregunta1,
+				Pregunta2   : pregunta2,
+				Pregunta3	: pregunta3,
+				Pregunta4	: pregunta4,
+				Pregunta5   : pregunta5,
+				Pregunta6 	: pregunta6,
+				pregunta7   : pregunta7},
+		url   : 'home/quiz',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+        	data = JSON.parse(data);
+        	if(data.error == 0){
+				$('#emailRegister').val("");
+				$('#ModalQuiz').modal('show');
+        	}else {
+				msj('error', 'Email no registrado');
+        		return;
+        	}
+		} catch (err){
+			msj('error',err.message);
+		}
 	});
 }
 function validateEmail(email){

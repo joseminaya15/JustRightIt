@@ -27,4 +27,12 @@ class M_Datos extends  CI_Model{
         $result = $this->db->query($sql);
         return $result->result();
     }
+    function actualizarDatos($correo, $tabla, $arrayUpDate){
+        $this->db->where('email',$correo);
+        $this->db->update($tabla, $arrayUpDate);
+        if ($this->db->trans_status() == false) {
+            throw new Exception('No se pudo actualizar los datos');
+        }
+        return array('error' => EXIT_SUCCESS,'msj' => MSJ_UPT);
+    }
 }

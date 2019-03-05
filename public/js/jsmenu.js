@@ -98,7 +98,7 @@ function initCalendarDaysMaxToday(id, currentDate, fecha){
 		weekStart : 0, 
 		date	: true, 
 		time	: false,
-		format 	: 'DD/MM/YYYY',
+		format 	: 'DD/MM',
 		cancelText : 'Cancel',
 		currentDate : startDate,
 		maxDate : (fecha == undefined) ? new Date() : fecha
