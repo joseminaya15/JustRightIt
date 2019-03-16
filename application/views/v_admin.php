@@ -49,9 +49,18 @@
                                     <th class="text-right">Tel&eacute;fono</th>
                                     <th class="text-left">Cumplea&ntilde;os</th>
                                     <th class="text-left">Deporte</th>
-                                    <th class="text-left">Comercializaci&oacute;n</th>
-                                    <th class="text-left">Descripci&oacute;n</th>
                                     <th class="text-center">Fecha</th>
+                                    <th class="text-left">Server</th>
+                                    <th class="text-left">Storage</th>
+                                    <th class="text-left">Wireless</th>
+                                    <th class="text-left">Hyperconvergencia</th>
+                                    <th class="text-left">Pregunta2</th>
+                                    <th class="text-left">Pregunta3</th>
+                                    <th class="text-left">Pregunta4</th>
+                                    <th class="text-left">Pregunta5</th>
+                                    <th class="text-left">Pregunta6</th>
+                                    <th class="text-left">Pregunta7</th>
+                                    <th class="text-left">C&oacute;digo</th>
                                 </tr>
                             </thead>
                           <tbody>

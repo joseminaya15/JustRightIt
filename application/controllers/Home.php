@@ -47,7 +47,7 @@ class Home extends CI_Controller {
 										   	'deporte'          => $deporte,
 										   	'fecha'            => $fecha);
 				$datoInsert  = $this->M_Datos->insertarDatos($insertParticipante,'contact');
-				// $this->sendConfirmation($correo);
+				$this->sendConfirmation($correo);
 	          	$data['msj']   = $datoInsert['msj'];
 	          	$data['error'] = $datoInsert['error'];
 	          }
@@ -73,7 +73,7 @@ class Home extends CI_Controller {
 			$this->email->from('info@iradianty.com');
 			$this->email->to($correo);
 			// $this->email->to('jose.minayac15@gmail.com');
-			$this->email->subject('Invitación HPE Persiguiendo tormentas.');
+			$this->email->subject('Invitación HPE JustRightIT.');
 			$texto = '<!DOCTYPE html>
 			                <html>
 			                    <body>
@@ -82,7 +82,7 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/persiguiendotormentas/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -93,14 +93,8 @@ class Home extends CI_Controller {
 			                                        <tr>
 			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 18px;font-weight: 600">Muchas gracias.<br> Su registro ha sido realizado con éxito.</font></td>
 													</tr>
-													<tr>
-			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #01a982;font-size: 14px;font-weight: 600">Un evento de</font></td>
-													</tr>
-													<tr>
-														<td><img src="http://iradianty.com/HPE/events/microsite/persiguiendotormentas/public/img/logo/logo-orbe.png" width="100" height="140" style="display: block;margin:auto;margin-bottom: 10px;"></td>
-													</tr>
 			                                        <tr>
-			                                            <td style="text-align: center;"><font style="font-family: arial;color: #757575;font-size: 12px;">&copy;Copyright 2018 Hewlett Packard Enterprise Development LP</font></td>
+			                                            <td style="text-align: center;"><font style="font-family: arial;color: #757575;font-size: 12px;">&copy;Copyright 2019 Hewlett Packard Enterprise Development LP</font></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -140,27 +134,108 @@ class Home extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
       	$data['msj']   = null;
 		try {
-			$pregunta1  = $this->input->post('Pregunta1');
-			$pregunta2  = $this->input->post('Pregunta2');
-			$pregunta3  = $this->input->post('Pregunta3');
-			$pregunta4  = $this->input->post('Pregunta4');
-			$pregunta5  = $this->input->post('Pregunta5');
-			$pregunta6  = $this->input->post('Pregunta6');
-			$pregunta7  = $this->input->post('Pregunta7');
-			$correo     = $this->session->userdata('email');
-			$actualizarParticipante = array('pregunta1' 	=> $pregunta1,
-											'pregunta2' 	=> $pregunta2,
-											'pregunta3' 	=> $pregunta3,
-											'pregunta4' 	=> $pregunta4,
-											'pregunta5' 	=> $pregunta5,
-											'pregunta6' 	=> $pregunta6,
-											'pregunta7'     => $pregunta7);
-			$datoInsert  = $this->M_Datos->actualizarDatos($correo,'participante', $actualizarParticipante);
+			$server            = $this->input->post('Server');
+			$storage           = $this->input->post('Storage');
+			$wireless          = $this->input->post('Wireless');
+			$hyperconvergencia = $this->input->post('Hyperconvergencia');
+			$pregunta2   	   = $this->input->post('Pregunta2');
+			$pregunta3  	   = $this->input->post('Pregunta3');
+			$pregunta4  	   = $this->input->post('Pregunta4');
+			$pregunta5 	 	   = $this->input->post('Pregunta5');
+			$pregunta6  	   = $this->input->post('Pregunta6');
+			$pregunta7  	   = $this->input->post('Pregunta7');
+			$codigo      	   = $this->input->post('Codigo');
+			$correo     	   = $this->session->userdata('email');
+			$actualizarParticipante = array('server'            => $server,
+											'storage'           => $storage,
+											'wireless'          => $wireless,
+											'hyperconvergencia' => $hyperconvergencia,
+											'pregunta2' 	    => $pregunta2,
+											'pregunta3' 	    => $pregunta3,
+											'pregunta4' 	    => $pregunta4,
+											'pregunta5' 	    => $pregunta5,
+											'pregunta6' 	    => $pregunta6,
+											'pregunta7'         => $pregunta7,
+											'codigo'            => $codigo);
+			$datoInsert  = $this->M_Datos->actualizarDatos($correo,'contact', $actualizarParticipante);
+			$this->sendCupo($correo,$codigo);
           	$data['msj']   = $datoInsert['msj'];
           	$data['error'] = $datoInsert['error'];
 		} catch(Exception $ex) {
 			$data['msj'] = $ex->getMessage();
 		}
       	echo json_encode($data);
+	}
+	function sendCupo($correo,$codigo){
+		$data['error'] = EXIT_ERROR;
+		$data['msj']   = null;
+		try {  
+			$this->load->library("email");
+			$configGmail = array('protocol'  => 'smtp',
+			                     'smtp_host' => 'mail.iradianty.com',
+			                     'smtp_port' => 587,
+			                     'smtp_user' => 'info@iradianty.com',
+			                     'smtp_pass' => 'EduardoBenavides2019!',
+			                     'mailtype'  => 'html',
+			                     'charset'   => 'utf-8',
+			                     'newline'   => "\r\n");    
+			$this->email->initialize($configGmail);
+			$this->email->from('info@iradianty.com');
+			$this->email->to($correo);
+			// $this->email->to('jose.minayac15@gmail.com');
+			$this->email->subject('Gracias por participar.');
+			$texto = '<!DOCTYPE html>
+			                <html>
+			                    <body>
+			                        <table width="500" cellpadding="0" cellspacing="0" align="center" style="border: solid 1px #ccc;">
+			                            <tr>
+			                                <td style="background-color: #415564;width:100%;">
+			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
+			                                        <tr>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+			                                        </tr>
+			                                    </table>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td>
+			                                    <table width="400" cellspacing="0" cellpadding="0" border="0" align="center" style="padding: 30px 10px">
+			                                        <tr>
+			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 18px;font-weight: 600">Gracias por participar.!</font></td>
+													</tr>
+													<tr>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
+													</tr>
+													<tr>
+														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;padding-top:10px;"><font style="font-family: arial;color: #000000;font-size: 20px;font-weight: 600">'.$codigo.'</font></td>
+													</tr>
+													<tr>
+														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">El souvenir solo se entrega el día del evento</font></td>
+													</tr>
+													<tr>
+														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">No es transferible, la entrega es personal.</font></td>
+													</tr>
+													<tr>
+														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">Presentar un documento de indentidad</font></td>
+													</tr>
+													<tr>
+														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">Los datos compartidos deberán ser correctos.</font></td>
+													</tr>
+			                                        <tr>
+			                                            <td style="text-align: center;"><font style="font-family: arial;color: #757575;font-size: 12px;">&copy;Copyright 2019 Hewlett Packard Enterprise Development LP</font></td>
+			                                        </tr>
+			                                    </table>
+			                                </td>
+			                            </tr>
+			                        </table>
+			                    </body>
+			                </html>';
+			$this->email->message($texto);
+			$this->email->send();
+			$data['error'] = EXIT_SUCCESS;
+		}catch (Exception $e){
+			$data['msj'] = $e->getMessage();
+		}
+		return json_encode(array_map('utf8_encode', $data));
 	}
 }
