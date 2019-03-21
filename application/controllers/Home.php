@@ -30,6 +30,7 @@ class Home extends CI_Controller {
 			$telefono	    = $this->input->post('Phone');
 			$birthday 	    = implode("-", array_reverse(explode("/", $this->input->post('Birthday'))));
 			$deporte	    = $this->input->post('Deporte');
+			$burger		    = $this->input->post('Burger');
 			$existe         = $this->M_Datos->existCorreo($correo);
 			$fecha          = date('Y-m-d');
 			if(count($existe) != 0) {
@@ -45,6 +46,7 @@ class Home extends CI_Controller {
 										   	'telefono'         => $telefono,
 										   	'birthday'         => $birthday,
 										   	'deporte'          => $deporte,
+											'flag_hamburguesa' => $burger,
 										   	'fecha'            => $fecha);
 				$datoInsert  = $this->M_Datos->insertarDatos($insertParticipante,'contact');
 				$this->sendConfirmation($correo);
@@ -237,5 +239,20 @@ class Home extends CI_Controller {
 			$data['msj'] = $e->getMessage();
 		}
 		return json_encode(array_map('utf8_encode', $data));
+	}
+	function ingresarSite(){
+		$data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+         try {
+			$password = $this->input->post('PasswordSite');
+			if($password == 'arubamascercadeti'){
+				$data['error'] = EXIT_SUCCESS;
+			}else {
+				$data['msj'] = 'Password incorrecto';
+			}
+        }catch(Exception $e) {
+           $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
 	}
 }

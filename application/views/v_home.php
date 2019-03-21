@@ -21,11 +21,12 @@
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>owl-carousel/owl.theme.default.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>opensans.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>animate.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
 </head>
-<body>
+<body onLoad="setInterval('hideModal()',500);" oncontextmenu="return false">
     <!-- <div class="js-header">
         <div class="js-header--container">
             <div class="js-header--left">
@@ -111,12 +112,34 @@
                 </div>
             </div>
             <div class="item">
+                <div class="js-fondo fondo6"></div>
+                <div class="js-container">
+                    <div class="js-home js-flex">
+                        <div class="js-contenido">
+                            <h2 class="open-sans">Aruba esta cerca de ti!!</h2>
+                            <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
                 <div class="js-fondo fondo5"></div>
                 <div class="js-container">
                     <div class="js-home js-flex">
                         <div class="js-contenido">
                             <h2>Sabemos que  tu  aceptas los retos sin dudar</h2>
                             <p>Te invitamos a este evento para ser parte del equipo ganador.</p>
+                            <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="js-fondo fondo7"></div>
+                <div class="js-container">
+                    <div class="js-home js-flex">
+                        <div class="js-contenido">
+                            <h2 class="open-sans">Aruba esta cerca de ti!!</h2>
                             <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Registrese aqu&iacute;</a>
                         </div>
                     </div>
@@ -131,6 +154,8 @@
                 <h3>Hora de inicio: 4:00 p.m.</h3>
                 <p>Costa Rica Beer Factory</p>
                 <span>Barrio Escalante, 100mts sur de Fresh Market o 600mts norte de Bagelmen´s, Calle 33, San Jos&eacute;</span>
+                <small>No queremos que te olvides de esta cita</small>
+                <a href="http://iradianty.com/HPE/events/microsite/JustRightIT/public/cita/Evento_HPE_JustRightIT.ics">Reservar fecha</a>
             </div>
             <div class="js-title">
                 <h2>REG&Iacute;STRESE AHORA</h2>
@@ -184,20 +209,79 @@
                         <input type="text" id="birthday" name="birthday" maxlength="5" placeholder="dd/mm">
                     </div>
                 </div>
-                <!-- <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="js-input js-date js-flex">
-                        <input class="js-disabled" type="text" id="birthday" name="birthday" maxlength="10" placeholder="Fecha de cumpleaños*" value="" style="pointer-events: none" disabled>
-                        <div class="js-icon">
-                            <button type="button" class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="mdi mdi-date_range"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="js-input">
                         <label for="text">Deporte que le gusta</label>
                         <input type="text" id="sport">
+                    </div>
+                </div>
+                <div class="col-xs-12 text-center jm-subtitle">
+                    <h2>Queremos  compartir la mesa contigo para esta noche  por lo que te ofrecemos a elegir  estas opciones de estas espectaculares hamburguesas</h2>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                        <div class="jm-book__flip">
+                            <div class="jm-book__front">
+                                <img src="<?php echo RUTA_IMG?>logo/burger1.jpg">
+                            </div>
+                            <div class="jm-book__back">
+                                <h2>Hamburguesa Texana</h2>
+                                <p>Estilo americano texano, torta de carne de res Premium en salsa BBQ, lonjas de tocineta crocante, 
+                                aros de cebolla empanizados, queso maduro y aros de jalape&ntilde;o.</p>
+                                <button id="book1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
+                            </div>
+                        </div>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="burger-1">
+                            <input type="radio" id="burger-1" class="mdl-radio__button" name="options" value="1">
+                        </label>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                        <div class="jm-book__flip">
+                            <div class="jm-book__front">
+                                <img src="<?php echo RUTA_IMG?>logo/burger2.jpg">                                
+                            </div>
+                            <div class="jm-book__back">
+                                <h2>Hamburguesa BF</h2>
+                                <p>Delicioso lomo al t&eacute;rmino de su preferencia, ba&ntilde;ado en salsa 3 quesos, con mezclas de sabores, 
+                                aguacate, tocino y una deliciosa textura crocante de patac&oacute;n</p>
+                                <button id="book2" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
+                            </div>
+                        </div>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="burger-2">
+                            <input type="radio" id="burger-2" class="mdl-radio__button" name="options" value="1">
+                        </label>                
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                        <div class="jm-book__flip">
+                            <div class="jm-book__front">
+                                <img src="<?php echo RUTA_IMG?>logo/burger3.jpg">
+                            </div>
+                            <div class="jm-book__back">
+                                <h2>Hamburguesa Escalante</h2>
+                                <p>Deliciosa hamburguesa con lomito, servido en lonjas con pan de ajonjol&iacute;, acompa&ntilde;ada con 
+                                guacamole ( ligeramente picante ), tocineta, rodajas de tomate con queso mozzarella fresco.</p>
+                                <button id="book3" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
+                            </div>
+                        </div>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="burger-3">
+                            <input type="radio" id="burger-3" class="mdl-radio__button" name="options" value="1">
+                        </label>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                        <div class="jm-book__flip">
+                            <div class="jm-book__front">
+                                <img src="<?php echo RUTA_IMG?>logo/burger4.jpg">
+                            </div>
+                            <div class="jm-book__back">
+                                <h2>Hamburguesa Vegetariano</h2>
+                                <p>Un rico pan artesanal con corteza y miga blanca, relleno de una mezcla de vegetales 
+                                salteados con salsa pomodoro de la casa y queso mozzarella gratinado.</p>
+                                <button id="book4" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
+                            </div>
+                        </div>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="burger-4">
+                            <input type="radio" id="burger-4" class="mdl-radio__button" name="options" value="1">
+                        </label>
                     </div>
                 </div>
             </div>
@@ -210,9 +294,10 @@
             </div>
         </div>
     </section>
-    <section id="login" class="js-section jm-white">
+    <section id="login" class="js-section jm-white jm-acceso">
         <div class="js-container">
-            <h2 class="js-title">ACCESO REGISTRADOS</h2>
+            <h2 class="js-title">HAZ EL QUIZ Y G&Aacute;NATE ESTE DASH</h2>
+            <img src="<?php echo RUTA_IMG?>fondo/regalo.png">
             <p class="text-center">Si usted ya se encuentra registrado, ingrese su email para realizar un quiz y ganar grandes premios.</p>
             <div class="js-input js-input--default">
                 <label for="text">Email*</label>
@@ -738,6 +823,47 @@
                             </div>
                         </div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="mdl-card">
+                    <div class="mdl-card__title">
+                        <h2>Accede al mejor site de eventos</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <div class="col-xs-12 js-input m-0">
+                            <label for="passwordSite">Contrase&ntilde;a</label>
+                            <input type="password" id="passwordSite">
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised jm-button" onclick="loginSite()">Ingresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalLibro" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-sm jm-modal max-width-320" role="document">
+			<div class="modal-content">
+				<div class="mdl-card">
+					<div class="mdl-card__title p-b-0">
+						<h2></h2>
+					</div>
+					<div class="mdl-card__supporting-text p-t-0">
+						<p></p>
+					</div>
+                    <div class="mdl-card__menu">
+                        <button class="mdl-button mdl-js-button mdl-button--icon" data-dismiss="modal">
+                            <i class="mdi mdi-close"></i>
+                        </button>
+                    </div>
 				</div>
 			</div>
 		</div>

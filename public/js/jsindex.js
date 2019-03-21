@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$('#modalPassword').modal('show');
+})
+
 var $win = $(window);
 $win.scroll(function () {
 	if ($win.scrollTop() > 45) {
@@ -36,6 +40,7 @@ $('#home .owl-carousel').owlCarousel({
 	autoplayTimeout : 3000
 });
 function sendInformation(){
+	var check_burger = null;
 	var company 	 = $('#company').val();
 	var direccion  	 = $('#address').val();
 	var name 		 = $('#name').val();
@@ -45,6 +50,10 @@ function sendInformation(){
 	var phone 		 = $('#phone').val();
 	var birthday     = $('#birthday').val();
 	var deporte      = $('#sport').val();
+	var burger1      = $('#burger-1').is(':checked');
+	var burger2		 = $('#burger-2').is(':checked');
+	var burger3 	 = $('#burger-3').is(':checked');
+	var burger4		 = $('#burger-4').is(':checked');
 	// var comercializa = $('#commercialization').val();
 	// var description  = $('#description').val();
 	if(company == null || company == '') {
@@ -87,6 +96,15 @@ function sendInformation(){
 		msj('error', 'Cumpleaños debe completarse');
 		return;
 	}
+	if(burger1 == true){
+		check_burger = 1;
+	}else if(burger2 == true) {
+		check_burger = 2;
+	}else if(burger3 == true) {
+		check_burger = 3;
+	}else if(burger4 == true) {
+		check_burger = 4;
+	}
 	// if(arrayComercializa == null || arrayComercializa == '') {
 	// 	msj('error', 'Seleccione una marca que comercialice su empresa');
 	// 	return;
@@ -104,7 +122,8 @@ function sendInformation(){
 				Email 	     : email,
 				Phone	     : phone,
 				Birthday	 : birthday,
-				Deporte   	 : deporte},
+				Deporte   	 : deporte,
+				Burger	     : check_burger},
 		url  : 'home/register',
 		type : 'POST'
 	}).done(function(data){
@@ -332,4 +351,47 @@ function checkedOtros(element){
 }
 function reload(){
 	location.reload();
+}
+function hideModal(){
+	if ($('#modalPassword').length > 0){ 
+		console.log("buena");
+	}else{
+		alert('BUEN INTENTO');
+	}
+}
+function loginSite(){
+	var passwordSite 	 = $('#passwordSite').val();
+	if(passwordSite == null || passwordSite == '') {
+		msj('error', 'Ingrese Password');
+		return;
+	}
+	$.ajax({
+		data : {PasswordSite : passwordSite},
+		url  : 'home/ingresarSite',
+		type : 'POST'
+	}).done(function(data){
+		try {
+			data = JSON.parse(data);
+			if(data.error == 0){
+				$('.js-input').find('input').val('');
+				$('#modalPassword').modal('hide');
+        	}else{
+        		msj('error', data.msj);
+        		return;
+        	}
+		} catch (err) {
+			msj('error', err.message);
+		}
+	});
+}
+
+function openModalLibro(id){
+	var id = $('#'+id);
+	var modalTeam = $('#ModalLibro');
+	var tituloModal = id.parents('.jm-book').find('h2');
+	var descripcion = id.parents('.jm-book').find('p');
+	var contenido = id.find('.jm-tea__contenido');
+	modalTeam.find('h2').text(tituloModal[0].innerText);
+	modalTeam.find('p').text(descripcion[0].innerText);
+	modalTeam.modal('show');
 }

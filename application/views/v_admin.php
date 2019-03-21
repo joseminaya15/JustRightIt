@@ -49,6 +49,7 @@
                                     <th class="text-right">Tel&eacute;fono</th>
                                     <th class="text-left">Cumplea&ntilde;os</th>
                                     <th class="text-left">Deporte</th>
+                                    <th class="text-left">Hamburguesa</th>
                                     <th class="text-center">Fecha</th>
                                     <th class="text-left">Server</th>
                                     <th class="text-left">Storage</th>

@@ -15,10 +15,22 @@ class Admin extends CI_Controller {
 	public function index(){
         $datos = $this->M_reporte->getDatosUser();
         $html  = '';
+        $hamburguesa = '';
         if(count($datos) == 0) {
             $html = '';
         }else {
             foreach ($datos as $key){
+                if($key->flag_hamburguesa == 1){
+                    $hamburguesa = 'Hmaburguesa Texana';
+                }else if($key->flag_hamburguesa == 2){
+                    $hamburguesa = 'Hmaburguesa BF';
+                }else if($key->flag_hamburguesa == 3){
+                    $hamburguesa = 'Hmaburguesa Escalante ';
+                }else if($key->flag_hamburguesa == 4){
+                    $hamburguesa = 'Hmaburguesa Vegetariana';
+                }else{
+                    $hamburguesa = 'Ninguna';
+                }
                 $html .= '<tr class="tr-cursor-pointer">
                             <td class="text-left">'.$key->empresa.'</td>
                             <td class="text-left">'.$key->direccion.'</td>
@@ -29,6 +41,7 @@ class Admin extends CI_Controller {
                             <td class="text-right">'.$key->telefono.'</td>
                             <td class="text-left">'.$key->birthday.'</td>
                             <td class="text-left">'.$key->deporte.'</td>
+                            <td class="text-left">'.$hamburguesa.'</td>
                             <td class="text-center">'.$key->fecha.'</td>
                             <td class="text-left">'.$key->server.'</td>
                             <td class="text-left">'.$key->storage.'</td>
