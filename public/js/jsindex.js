@@ -1,7 +1,6 @@
-$(document).ready(function(){
-	$('#modalPassword').modal('show');
-})
-
+// $(document).ready(function(){
+// 	$('#modalPassword').modal('show');
+// })
 var $win = $(window);
 $win.scroll(function () {
 	if ($win.scrollTop() > 45) {
@@ -352,39 +351,38 @@ function checkedOtros(element){
 function reload(){
 	location.reload();
 }
-function hideModal(){
-	if ($('#modalPassword').length > 0){ 
-		console.log("buena");
-	}else{
-		alert('BUEN INTENTO');
-	}
-}
-function loginSite(){
-	var passwordSite 	 = $('#passwordSite').val();
-	if(passwordSite == null || passwordSite == '') {
-		msj('error', 'Ingrese Password');
-		return;
-	}
-	$.ajax({
-		data : {PasswordSite : passwordSite},
-		url  : 'home/ingresarSite',
-		type : 'POST'
-	}).done(function(data){
-		try {
-			data = JSON.parse(data);
-			if(data.error == 0){
-				$('.js-input').find('input').val('');
-				$('#modalPassword').modal('hide');
-        	}else{
-        		msj('error', data.msj);
-        		return;
-        	}
-		} catch (err) {
-			msj('error', err.message);
-		}
-	});
-}
-
+// function hideModal(){
+// 	if ($('#modalPassword').length > 0){ 
+// 		console.log("buena");
+// 	}else{
+// 		alert('BUEN INTENTO');
+// 	}
+// }
+// function loginSite(){
+// 	var passwordSite 	 = $('#passwordSite').val();
+// 	if(passwordSite == null || passwordSite == '') {
+// 		msj('error', 'Ingrese Password');
+// 		return;
+// 	}
+// 	$.ajax({
+// 		data : {PasswordSite : passwordSite},
+// 		url  : 'home/ingresarSite',
+// 		type : 'POST'
+// 	}).done(function(data){
+// 		try {
+// 			data = JSON.parse(data);
+// 			if(data.error == 0){
+// 				$('.js-input').find('input').val('');
+// 				$('#modalPassword').modal('hide');
+//         	}else{
+//         		msj('error', data.msj);
+//         		return;
+//         	}
+// 		} catch (err) {
+// 			msj('error', err.message);
+// 		}
+// 	});
+// }
 function openModalLibro(id){
 	var id = $('#'+id);
 	var modalTeam = $('#ModalLibro');

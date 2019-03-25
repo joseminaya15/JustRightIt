@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -194,7 +194,7 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -206,7 +206,7 @@ class Home extends CI_Controller {
 			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 18px;font-weight: 600">Gracias por participar.!</font></td>
 													</tr>
 													<tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
 													</tr>
 													<tr>
 														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;padding-top:10px;"><font style="font-family: arial;color: #000000;font-size: 20px;font-weight: 600">'.$codigo.'</font></td>
@@ -240,19 +240,19 @@ class Home extends CI_Controller {
 		}
 		return json_encode(array_map('utf8_encode', $data));
 	}
-	function ingresarSite(){
-		$data['error'] = EXIT_ERROR;
-        $data['msj']   = null;
-         try {
-			$password = $this->input->post('PasswordSite');
-			if($password == 'arubamascercadeti'){
-				$data['error'] = EXIT_SUCCESS;
-			}else {
-				$data['msj'] = 'Password incorrecto';
-			}
-        }catch(Exception $e) {
-           $data['msj'] = $e->getMessage();
-        }
-        echo json_encode($data);
-	}
+	// function ingresarSite(){
+	// 	$data['error'] = EXIT_ERROR;
+    //     $data['msj']   = null;
+    //      try {
+	// 		$password = $this->input->post('PasswordSite');
+	// 		if($password == 'arubamascercadeti'){
+	// 			$data['error'] = EXIT_SUCCESS;
+	// 		}else {
+	// 			$data['msj'] = 'Password incorrecto';
+	// 		}
+    //     }catch(Exception $e) {
+    //        $data['msj'] = $e->getMessage();
+    //     }
+    //     echo json_encode($data);
+	// }
 }

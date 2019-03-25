@@ -28,7 +28,7 @@
                 <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
             </div>
             <div class="js-header--right">
-                <p>HPE Evento Pais</p>
+                <p>HPE JustRightIT Costa Rica</p>
             </div>
         </div>
         <section class="js-section js-height">

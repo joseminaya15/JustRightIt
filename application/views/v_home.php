@@ -26,14 +26,8 @@
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
 </head>
-<body onLoad="setInterval('hideModal()',500);" oncontextmenu="return false">
-    <!-- <div class="js-header">
-        <div class="js-header--container">
-            <div class="js-header--left">
-                <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
-            </div>
-        </div>
-    </div> -->
+<!-- <body onLoad="setInterval('hideModal()',500);" oncontextmenu="return false"> -->
+<body>
     <nav class="navbar navbar-default">
         <div class="js-container">
             <div class="navbar-header">
@@ -155,7 +149,7 @@
                 <p>Costa Rica Beer Factory</p>
                 <span>Barrio Escalante, 100mts sur de Fresh Market o 600mts norte de Bagelmen´s, Calle 33, San Jos&eacute;</span>
                 <small>No queremos que te olvides de esta cita</small>
-                <a href="http://iradianty.com/HPE/events/microsite/JustRightIT/public/cita/Evento_HPE_JustRightIT.ics">Reservar fecha</a>
+                <a href="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/cita/Evento_HPE_JustRightIT.ics">Reservar fecha</a>
             </div>
             <div class="js-title">
                 <h2>REG&Iacute;STRESE AHORA</h2>
@@ -222,10 +216,10 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
+                                <h2>La aruba ex&oacute;tica</h2>
                                 <img src="<?php echo RUTA_IMG?>logo/burger1.jpg">
                             </div>
                             <div class="jm-book__back">
-                                <h2>Hamburguesa Texana</h2>
                                 <p>Estilo americano texano, torta de carne de res Premium en salsa BBQ, lonjas de tocineta crocante, 
                                 aros de cebolla empanizados, queso maduro y aros de jalape&ntilde;o.</p>
                                 <button id="book1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
@@ -238,10 +232,10 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
+                                <h2>La Simplivity</h2>
                                 <img src="<?php echo RUTA_IMG?>logo/burger2.jpg">                                
                             </div>
                             <div class="jm-book__back">
-                                <h2>Hamburguesa BF</h2>
                                 <p>Delicioso lomo al t&eacute;rmino de su preferencia, ba&ntilde;ado en salsa 3 quesos, con mezclas de sabores, 
                                 aguacate, tocino y una deliciosa textura crocante de patac&oacute;n</p>
                                 <button id="book2" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
@@ -254,10 +248,10 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
+                                <h2>La Nimble</h2>
                                 <img src="<?php echo RUTA_IMG?>logo/burger3.jpg">
                             </div>
                             <div class="jm-book__back">
-                                <h2>Hamburguesa Escalante</h2>
                                 <p>Deliciosa hamburguesa con lomito, servido en lonjas con pan de ajonjol&iacute;, acompa&ntilde;ada con 
                                 guacamole ( ligeramente picante ), tocineta, rodajas de tomate con queso mozzarella fresco.</p>
                                 <button id="book3" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
@@ -270,10 +264,10 @@
                     <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
+                                <h2>La ClearPass</h2>
                                 <img src="<?php echo RUTA_IMG?>logo/burger4.jpg">
                             </div>
                             <div class="jm-book__back">
-                                <h2>Hamburguesa Vegetariano</h2>
                                 <p>Un rico pan artesanal con corteza y miga blanca, relleno de una mezcla de vegetales 
                                 salteados con salsa pomodoro de la casa y queso mozzarella gratinado.</p>
                                 <button id="book4" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
