@@ -388,7 +388,8 @@ function openModalLibro(id){
 	var modalTeam = $('#ModalLibro');
 	var tituloModal = id.parents('.jm-book').find('h2');
 	var descripcion = id.parents('.jm-book').find('p');
-	var contenido = id.find('.jm-tea__contenido');
+	var imagen      = id.parents('.jm-book').find('img');
+	modalTeam.find('img').attr("src",imagen.attr('src'));
 	modalTeam.find('h2').text(tituloModal[0].innerText);
 	modalTeam.find('p').text(descripcion[0].innerText);
 	modalTeam.modal('show');

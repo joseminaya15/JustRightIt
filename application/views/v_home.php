@@ -849,6 +849,7 @@
 				<div class="mdl-card">
 					<div class="mdl-card__title p-b-0">
 						<h2></h2>
+                        <img src="" class="libro-imagen"/>
 					</div>
 					<div class="mdl-card__supporting-text p-t-0">
 						<p></p>

@@ -21,13 +21,13 @@ class Admin extends CI_Controller {
         }else {
             foreach ($datos as $key){
                 if($key->flag_hamburguesa == 1){
-                    $hamburguesa = 'Hmaburguesa Texana';
+                    $hamburguesa = 'La aruba exotica';
                 }else if($key->flag_hamburguesa == 2){
-                    $hamburguesa = 'Hmaburguesa BF';
+                    $hamburguesa = 'La Simplivity';
                 }else if($key->flag_hamburguesa == 3){
-                    $hamburguesa = 'Hmaburguesa Escalante ';
+                    $hamburguesa = 'La Nimble';
                 }else if($key->flag_hamburguesa == 4){
-                    $hamburguesa = 'Hmaburguesa Vegetariana';
+                    $hamburguesa = 'La ClearPass';
                 }else{
                     $hamburguesa = 'Ninguna';
                 }

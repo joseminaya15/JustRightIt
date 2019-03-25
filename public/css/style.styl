@@ -603,6 +603,9 @@ footer
 			text-align center
 			img 
 				max-width 120px
+				&.libro-imagen
+					max-width  100%
+					margin 20px 0
 			h2
 				font-size 28px
 				line-height 28px
@@ -743,24 +746,29 @@ table
 	.jm-book__flip
 		position relative
 		width 100%
-		height 235px
+		height 290px
 		margin-bottom 10px
 		.jm-book__front
 			flipCard()
 			flipCardFront()
 			width 100%
 			height 100%
-			max-width 180px
+			max-width 240px
 			background-color #FFFFFF
 			left 0
 			right 0
 			margin auto
 			padding 10px
 			img 
-				max-width 150px
+				max-width 200px
 				height 215px
 				object-fit cover
 				cursor pointer
+			h2
+				color #000000
+				margin 5px 0 15px 0
+				font-size 24px
+				line-height 24px
 			.mdl-radio
 				display block
 				margin-top 20px
@@ -773,19 +781,17 @@ table
 		.jm-book__back
 			flipCard()
 			flipCardBack()
+			flexCenter()
+			flex-direction column
+			justify-content center
 			width 100%
 			height 100%
-			max-width 180px
+			max-width 240px
 			background-color #425563
 			left 0
 			right 0
 			margin auto
-			padding 10px
-			h2
-				color #FFFFFF
-				margin 8px 0
-				font-size 24px
-				line-height 24px
+			padding 20px 10px
 			p
 				color #FFFFFF
 				font-size 16px
