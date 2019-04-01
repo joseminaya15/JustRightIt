@@ -75,7 +75,7 @@ class Home extends CI_Controller {
 			$this->email->from('info@iradianty.com');
 			$this->email->to($correo);
 			// $this->email->to('jose.minayac15@gmail.com');
-			$this->email->subject('Invitación HPE JustRightIT.');
+			$this->email->subject('Invitación HPE mas cerca de ti.');
 			$texto = '<!DOCTYPE html>
 			                <html>
 			                    <body>
@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -136,28 +136,40 @@ class Home extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
       	$data['msj']   = null;
 		try {
-			$server            = $this->input->post('Server');
-			$storage           = $this->input->post('Storage');
-			$wireless          = $this->input->post('Wireless');
-			$hyperconvergencia = $this->input->post('Hyperconvergencia');
-			$pregunta2   	   = $this->input->post('Pregunta2');
-			$pregunta3  	   = $this->input->post('Pregunta3');
+			$pregunta1         = $this->input->post('Pregunta1');
+			$pregunta2   	   = $this->input->post('Person');
+			$pregunta3  	   = $this->input->post('Employee');
 			$pregunta4  	   = $this->input->post('Pregunta4');
 			$pregunta5 	 	   = $this->input->post('Pregunta5');
 			$pregunta6  	   = $this->input->post('Pregunta6');
 			$pregunta7  	   = $this->input->post('Pregunta7');
+			$pregunta8  	   = $this->input->post('Pregunta8');
+			$pregunta9  	   = $this->input->post('Pregunta9');
+			$server            = $this->input->post('Server');
+			$storage           = $this->input->post('Storage');
+			$wireless          = $this->input->post('Wireless');
+			$hyperconvergencia = $this->input->post('Hyperconvergencia');
+			$pregunta11  	   = $this->input->post('Pregunta11');
+			$pregunta12  	   = $this->input->post('Pregunta12');
+			$pregunta13  	   = $this->input->post('Pregunta13');
 			$codigo      	   = $this->input->post('Codigo');
 			$correo     	   = $this->session->userdata('email');
-			$actualizarParticipante = array('server'            => $server,
-											'storage'           => $storage,
-											'wireless'          => $wireless,
-											'hyperconvergencia' => $hyperconvergencia,
+			$actualizarParticipante = array('pregunta1' 	    => $pregunta1,
 											'pregunta2' 	    => $pregunta2,
 											'pregunta3' 	    => $pregunta3,
 											'pregunta4' 	    => $pregunta4,
 											'pregunta5' 	    => $pregunta5,
 											'pregunta6' 	    => $pregunta6,
 											'pregunta7'         => $pregunta7,
+											'pregunta8'         => $pregunta8,
+											'pregunta9'         => $pregunta9,
+											'server'            => $server,
+											'storage'           => $storage,
+											'wireless'          => $wireless,
+											'hyperconvergencia' => $hyperconvergencia,
+											'pregunta11'        => $pregunta11,
+											'pregunta12'        => $pregunta12,
+											'pregunta13'        => $pregunta13,
 											'codigo'            => $codigo);
 			$datoInsert  = $this->M_Datos->actualizarDatos($correo,'contact', $actualizarParticipante);
 			$this->sendCupo($correo,$codigo);
@@ -194,7 +206,7 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -206,7 +218,7 @@ class Home extends CI_Controller {
 			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 18px;font-weight: 600">Gracias por participar.!</font></td>
 													</tr>
 													<tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/JustRightIT/CostaRica/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
+														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
 													</tr>
 													<tr>
 														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;padding-top:10px;"><font style="font-family: arial;color: #000000;font-size: 20px;font-weight: 600">'.$codigo.'</font></td>

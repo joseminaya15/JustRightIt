@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
         <meta name="viewport"               content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta name="description"            content="HPE Just Right IT">
-        <meta name="keywords"               content="HPE Just Right IT">
+        <meta name="description"            content="HPE más cerca de ti.">
+        <meta name="keywords"               content="HPE más cerca de ti.">
         <meta name="robots"                 content="Index,Follow">
         <meta name="date"                   content="December 15, 2018"/>
         <meta name="language"               content="en">
         <meta name="theme-color"            content="#425563">
-        <title>HPE Just Right IT</title>
+        <title>HPE m&aacute;s cerca de ti.</title>
         <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.ico">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
@@ -51,16 +51,22 @@
                                     <th class="text-left">Deporte</th>
                                     <th class="text-left">Hamburguesa</th>
                                     <th class="text-center">Fecha</th>
+                                    <th class="text-left">Su empresa vende</th>
+                                    <th class="text-left">Personas</th>
+                                    <th class="text-left">Empleados</th>
+                                    <th class="text-left">Principales industrias</th>
+                                    <th class="text-left">Servicios</th>
+                                    <th class="text-left">% de hardware y servicios</th>
+                                    <th class="text-left">Herramientas</th>
+                                    <th class="text-left">Entrenarte</th>
+                                    <th class="text-left">Distribuidores</th>
                                     <th class="text-left">Server</th>
                                     <th class="text-left">Storage</th>
                                     <th class="text-left">Wireless</th>
                                     <th class="text-left">Hyperconvergencia</th>
-                                    <th class="text-left">Pregunta2</th>
-                                    <th class="text-left">Pregunta3</th>
-                                    <th class="text-left">Pregunta4</th>
-                                    <th class="text-left">Pregunta5</th>
-                                    <th class="text-left">Pregunta6</th>
-                                    <th class="text-left">Pregunta7</th>
+                                    <th class="text-left">Pregunta11</th>
+                                    <th class="text-left">Pregunta12</th>
+                                    <th class="text-left">Pregunta13</th>
                                     <th class="text-left">C&oacute;digo</th>
                                 </tr>
                             </thead>

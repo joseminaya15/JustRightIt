@@ -179,20 +179,73 @@ function nextQuestion(element){
 	section.addClass('animated fadeOutLeft');
 	$('#question-'+question).addClass('animated fadeInRight')
 }
+var pregunta1              = [];
+var pregunta4  			   = [];
+var pregunta5  			   = [];
+var pregunta6  			   = "";
+var pregunta7  			   = [];
+var pregunta8  			   = [];
+var pregunta9  			   = [];
 var arrayServer            = [];
 var arrayStorage           = [];
 var arrayWireless          = [];
 var arrayHyperconvergencia = [];
-var pregunta2  = [];
-var pregunta3  = [];
-var pregunta4  = [];
-var pregunta5  = [];
-var pregunta6  = [];
-var pregunta7  = [];
+var pregunta11             = [];
+var pregunta12             = [];
+var pregunta13             = [];
 function sendQuiz(){
 	var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
-	var codigo = "";
-	for (i=0; i<6; i++) codigo +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
+	var codigo     = "";
+	var person     = $('#person').val();
+	var employee   = $('#employee').val();
+	var hardware   = $('#hardware').val();
+	var service    = $('#service').val();
+	$('#button-quiz').attr("disabled", true);
+	for (i=0; i<6; i++) codigo +=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+	$(".jm-checkbox--one .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('.mdl-checkbox__label');
+		var textChecked  = inputChecked.text();
+		pregunta1.push(textChecked);
+	})
+	$(".jm-checkbox--industry .is-checked").each(function (){
+		var isChecked    = $(this);
+		var nameOtros    = isChecked.find('input').attr('data-name');;
+		var textChecked  = isChecked.find('.mdl-checkbox__label').text();
+		pregunta4.push(textChecked);
+		if(nameOtros == "otros"){
+			var divInput  = isChecked.parents('.jm-list--checkbox').find('.jm-input').find('input').val();
+			pregunta4.push(divInput);
+		}
+	})
+	$(".jm-checkbox--service .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('.mdl-checkbox__label');
+		var textChecked  = inputChecked.text();
+		pregunta5.push(textChecked);
+	})
+	$(".jm-checkbox--setting .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('.mdl-checkbox__label');
+		var textChecked  = inputChecked.text();
+		pregunta7.push(textChecked);
+	})
+	$(".jm-checkbox--trainer .is-checked").each(function (){
+		var isChecked    = $(this);
+		var nameOtros    = isChecked.find('input').attr('data-name');;
+		var textChecked  = isChecked.find('.mdl-checkbox__label').text();
+		pregunta8.push(textChecked);
+		if(nameOtros == "otros"){
+			var divInput  = isChecked.parents('.jm-list--checkbox').find('.jm-input').find('input').val();
+			pregunta8.push(divInput);
+		}
+	})
+	$(".jm-checkbox--distributor .is-checked").each(function (){
+		var isChecked    = $(this);
+		var inputChecked = isChecked.find('.mdl-checkbox__label');
+		var textChecked  = inputChecked.text();
+		pregunta9.push(textChecked);
+	})
 	$(".jm-checkbox--server .is-checked").each(function (){
 		var isChecked    = $(this);
 		var nameOtros    = isChecked.find('input').attr('data-name');;
@@ -237,59 +290,51 @@ function sendQuiz(){
 		var isChecked    = $(this);
 		var inputChecked = isChecked.find('.mdl-checkbox__label');
 		var textChecked  = inputChecked.text();
-		pregunta2.push(textChecked);
+		pregunta11.push(textChecked);
 	})
-	$(".jm-checkbox--three .is-checked").each(function (){
+	$(".jm-checkbox--twelve .is-checked").each(function (){
 		var isChecked    = $(this);
 		var inputChecked = isChecked.find('.mdl-checkbox__label');
 		var textChecked  = inputChecked.text();
-		pregunta3.push(textChecked);
+		pregunta12.push(textChecked);
 	})
-	$(".jm-checkbox--four .is-checked").each(function (){
+	$(".jm-checkbox--thirteen .is-checked").each(function (){
 		var isChecked    = $(this);
 		var inputChecked = isChecked.find('.mdl-checkbox__label');
 		var textChecked  = inputChecked.text();
-		pregunta4.push(textChecked);
+		pregunta13.push(textChecked);
 	})
-	$(".jm-checkbox--five .is-checked").each(function (){
-		var isChecked    = $(this);
-		var inputChecked = isChecked.find('.mdl-checkbox__label');
-		var textChecked  = inputChecked.text();
-		pregunta5.push(textChecked);
-	})
-	$(".jm-checkbox--six .is-checked").each(function (){
-		var isChecked    = $(this);
-		var inputChecked = isChecked.find('.mdl-checkbox__label');
-		var textChecked  = inputChecked.text();
-		pregunta6.push(textChecked);
-	})
-	$(".jm-checkbox--seven .is-checked").each(function (){
-		var isChecked    = $(this);
-		var inputChecked = isChecked.find('.mdl-checkbox__label');
-		var textChecked  = inputChecked.text();
-		pregunta7.push(textChecked);
-	})
+	pregunta1              = (pregunta1 == null) ? '' : pregunta1.toString();
+	pregunta4              = (pregunta4 == null) ? '' : pregunta4.toString();
+	pregunta5              = (pregunta5 == null) ? '' : pregunta5.toString();
+	pregunta6              = hardware + "% Hardware y " + service +  "% Servicio";
+	pregunta7              = (pregunta7 == null) ? '' : pregunta7.toString();
+	pregunta8              = (pregunta8 == null) ? '' : pregunta8.toString();
+	pregunta9              = (pregunta9 == null) ? '' : pregunta9.toString();
 	arrayServer            = (arrayServer == null) ? '' : arrayServer.toString();
 	arrayStorage           = (arrayStorage == null) ? '' : arrayStorage.toString();
 	arrayWireless          = (arrayWireless == null) ? '' : arrayWireless.toString();
 	arrayHyperconvergencia = (arrayHyperconvergencia == null) ? '' : arrayHyperconvergencia.toString();
-	pregunta2              = (pregunta2 == null) ? '' : pregunta2.toString();
-	pregunta3              = (pregunta3 == null) ? '' : pregunta3.toString();
-	pregunta4              = (pregunta4 == null) ? '' : pregunta4.toString();
-	pregunta5              = (pregunta5 == null) ? '' : pregunta5.toString();
-	pregunta6              = (pregunta6 == null) ? '' : pregunta6.toString();
-	pregunta7              = (pregunta7 == null) ? '' : pregunta7.toString();
+	pregunta11             = (pregunta11 == null) ? '' : pregunta11.toString();
+	pregunta12             = (pregunta12 == null) ? '' : pregunta12.toString();
+	pregunta13             = (pregunta13 == null) ? '' : pregunta13.toString();
 	$.ajax({
-		data : {Server            : arrayServer,
-				Storage           : arrayStorage,
-				Wireless          : arrayWireless,
-				Hyperconvergencia : arrayHyperconvergencia,
-				Pregunta2   	  : pregunta2,
-				Pregunta3		  : pregunta3,
+		data : {Pregunta1         : pregunta1,
+				Person            : person,
+				Employee          : employee,
 				Pregunta4		  : pregunta4,
 				Pregunta5   	  : pregunta5,
 				Pregunta6 		  : pregunta6,
 				Pregunta7   	  : pregunta7,
+				Pregunta8   	  : pregunta8,
+				Pregunta9   	  : pregunta9,
+				Server            : arrayServer,
+				Storage           : arrayStorage,
+				Wireless          : arrayWireless,
+				Hyperconvergencia : arrayHyperconvergencia,
+				Pregunta11   	  : pregunta11,
+				Pregunta12   	  : pregunta12,
+				Pregunta13   	  : pregunta13,
 				Codigo            : codigo},
 		url   : 'home/quiz',
 		type  : 'POST'
@@ -297,23 +342,27 @@ function sendQuiz(){
 		try{
         	data = JSON.parse(data);
         	if(data.error == 0){
+				pregunta1			   = [];
+				pregunta4  			   = [];
+				pregunta5  			   = [];
+				pregunta6  			   = [];
+				pregunta7  			   = [];
+				pregunta8  			   = [];
+				pregunta9  			   = [];
 				arrayServer            = [];
 				arrayStorage           = [];
 				arrayWireless          = [];
 				arrayHyperconvergencia = [];
-				pregunta2  = [];
-				pregunta3  = [];
-				pregunta4  = [];
-				pregunta5  = [];
-				pregunta6  = [];
-				pregunta7  = [];
+				pregunta11  			   = [];
+				pregunta12  			   = [];
+				pregunta13  			   = [];
 				$('.js-checkbox').find('.mdl-checkbox').removeClass('is-checked');
 				$('.js-checkbox').find('input').prop("checked", false);
 				$('#textAnswer').css('display','none');
-				$('.jm-cupo').find('h3').text(codigo);
 				$('.jm-question').removeClass('fadeInRight');
 				$('#question-seven').addClass('animated fadeOutLeft');
 				$('#section-cupo').addClass('animated fadeInRight');
+				$('#button-quiz').attr("disabled", false);
         	}else {
 				msj('error', 'Hubo un problema');
         		return;

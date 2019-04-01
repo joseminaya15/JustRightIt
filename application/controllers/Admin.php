@@ -21,7 +21,7 @@ class Admin extends CI_Controller {
         }else {
             foreach ($datos as $key){
                 if($key->flag_hamburguesa == 1){
-                    $hamburguesa = 'La aruba exotica';
+                    $hamburguesa = 'La Aruba exotica';
                 }else if($key->flag_hamburguesa == 2){
                     $hamburguesa = 'La Simplivity';
                 }else if($key->flag_hamburguesa == 3){
@@ -43,16 +43,22 @@ class Admin extends CI_Controller {
                             <td class="text-left">'.$key->deporte.'</td>
                             <td class="text-left">'.$hamburguesa.'</td>
                             <td class="text-center">'.$key->fecha.'</td>
-                            <td class="text-left">'.$key->server.'</td>
-                            <td class="text-left">'.$key->storage.'</td>
-                            <td class="text-left">'.$key->wireless.'</td>
-                            <td class="text-left">'.$key->hyperconvergencia.'</td>
+                            <td class="text-left">'.$key->pregunta1.'</td>
                             <td class="text-left">'.$key->pregunta2.'</td>
                             <td class="text-left">'.$key->pregunta3.'</td>
                             <td class="text-left">'.$key->pregunta4.'</td>
                             <td class="text-left">'.$key->pregunta5.'</td>
                             <td class="text-left">'.$key->pregunta6.'</td>
                             <td class="text-left">'.$key->pregunta7.'</td>
+                            <td class="text-left">'.$key->pregunta8.'</td>
+                            <td class="text-left">'.$key->pregunta9.'</td>
+                            <td class="text-left">'.$key->server.'</td>
+                            <td class="text-left">'.$key->storage.'</td>
+                            <td class="text-left">'.$key->wireless.'</td>
+                            <td class="text-left">'.$key->hyperconvergencia.'</td>
+                            <td class="text-left">'.$key->pregunta11.'</td>
+                            <td class="text-left">'.$key->pregunta12.'</td>
+                            <td class="text-left">'.$key->pregunta13.'</td>
                             <td class="text-left">'.$key->codigo.'</td>
                         </tr>';
             }
