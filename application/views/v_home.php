@@ -60,11 +60,22 @@
     <section id="home">
         <div class="owl-carousel owl-theme">
             <div class="item">
+                <div class="js-fondo fondo6"></div>
+                <div class="js-container">
+                    <div class="js-home js-flex">
+                        <div class="js-contenido">
+                            <h2 class="open-sans">¡HPE M&aacute;s cerca de Ti!</h2>
+                            <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
                 <div class="js-fondo fondo1"></div>
                 <div class="js-container">
                     <div class="js-home js-flex">
                         <div class="js-contenido">
-                            <h2>"Aceptas los retos sin dudar?"</h2>
+                            <h2>La vida es un desaf&iacute;o, ¿Aceptas los retos sin dudar?</h2>
                             <p>Te invitamos a ser parte del equipo ganador.</p>
                             <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
                         </div>
@@ -87,7 +98,7 @@
                 <div class="js-container">
                     <div class="js-home js-flex">
                         <div class="js-contenido">
-                            <h2>"Aceptas los retos sin dudar?"</h2>
+                            <h2>La vida es un desaf&iacute;o, ¿Aceptas los retos sin dudar?</h2>
                             <p>Te invitamos a ser parte del equipo ganador.</p>
                             <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
                         </div>
@@ -106,22 +117,11 @@
                 </div>
             </div>
             <div class="item">
-                <div class="js-fondo fondo6"></div>
-                <div class="js-container">
-                    <div class="js-home js-flex">
-                        <div class="js-contenido">
-                            <h2 class="open-sans">Aruba esta cerca de ti!!</h2>
-                            <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
                 <div class="js-fondo fondo5"></div>
                 <div class="js-container">
                     <div class="js-home js-flex">
                         <div class="js-contenido">
-                            <h2>Sabemos que  tu  aceptas los retos sin dudar</h2>
+                            <h2>¿Est&aacute;s preparandote para afrontar los retos que trae el cambio?</h2>
                             <p>Te invitamos a ser parte del equipo ganador.</p>
                             <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
                         </div>
@@ -133,7 +133,7 @@
                 <div class="js-container">
                     <div class="js-home js-flex">
                         <div class="js-contenido">
-                            <h2 class="open-sans">Aruba esta cerca de ti!!</h2>
+                            <h2 class="open-sans">¡HPE M&aacute;s cerca de Ti!</h2>
                             <a href="#register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect link js-button">Reg&iacute;strate ahora</a>
                         </div>
                     </div>
@@ -144,15 +144,16 @@
     <section id="register" class="js-section">
         <div class="js-container">
             <div class="js-information">
+                <img class="jm-logo-hpe" src="<?php echo RUTA_IMG?>logo/logo-hpemascercadeti.png">
                 <h2>Jueves 25 de Abril, 2019</h2>
-                <h3>Hora de inicio: 4:00 p.m.</h3>
+                <h3>Hora de inicio: 3:30 p.m.</h3>
                 <p>Costa Rica Beer Factory</p>
                 <span>Barrio Escalante, 100mts sur de Fresh Market o 600mts norte de Bagelmen´s, Calle 33, San Jos&eacute;</span>
                 <small>No queremos que te olvides de esta cita</small>
-                <a href="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/cita/Evento_HPE_JustRightIT.ics">Reservar fecha</a>
+                <a href="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/cita/Evento_hpemascercadeti_costarica.ics">Reservar fecha</a>
             </div>
             <div class="js-title">
-                <h2>REG&Iacute;STRESE AHORA</h2>
+                <h2>REG&Iacute;STRATE AHORA</h2>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
@@ -213,7 +214,7 @@
                     <h2>Queremos compartir la mesa contigo esta noche, por lo que te ofrecemos a elegir entre las opciones de estas espectaculares hamburguesas.</h2>
                 </div>
                 <div class="col-xs-12">
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                    <div class="col-md-3 col-sm-6 col-xs-12 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La Aruba ex&oacute;tica</h2>
@@ -229,11 +230,11 @@
                             <input type="radio" id="burger-1" class="mdl-radio__button" name="options" value="1">
                         </label>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                    <div class="col-md-3 col-sm-6 col-xs-12 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La Simplivity</h2>
-                                <img src="<?php echo RUTA_IMG?>logo/burger2.jpg">                                
+                                <img src="<?php echo RUTA_IMG?>logo/burger2.png">                                
                             </div>
                             <div class="jm-book__back">
                                 <p>Delicioso lomo al t&eacute;rmino de su preferencia, ba&ntilde;ado en salsa 3 quesos, con mezclas de sabores, 
@@ -245,11 +246,11 @@
                             <input type="radio" id="burger-2" class="mdl-radio__button" name="options" value="1">
                         </label>                
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                    <div class="col-md-3 col-sm-6 col-xs-12 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La Nimble</h2>
-                                <img src="<?php echo RUTA_IMG?>logo/burger3.jpg">
+                                <img src="<?php echo RUTA_IMG?>logo/burger3.png">
                             </div>
                             <div class="jm-book__back">
                                 <p>Deliciosa hamburguesa con lomito, servido en lonjas con pan de ajonjol&iacute;, acompa&ntilde;ada con 
@@ -261,7 +262,7 @@
                             <input type="radio" id="burger-3" class="mdl-radio__button" name="options" value="1">
                         </label>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 jm-book">
+                    <div class="col-md-3 col-sm-6 col-xs-12 jm-book">
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La ClearPass</h2>
@@ -431,7 +432,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="industry-input">
-                                        <label class="mdl-textfield__label" for="industry-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="industry-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +551,7 @@
                         <div class="jm-question eight-question" id="question-eight">
                             <div class="jm-list--checkbox">
                                 <div class="jm-title--checlbox">
-                                    <h2>8. ¿Te gustar&iacute;a que entrenarte en alguna de estas herramientas?</h2>
+                                    <h2>8. ¿Te gustar&iacute;a entrenarte en alguna de estas herramientas?</h2>
                                 </div>
                                 <div class="js-checkbox jm-checkbox--trainer">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="TRAINER-IQUOTE">
@@ -603,7 +604,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="trainer-input">
-                                        <label class="mdl-textfield__label" for="trainer-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="trainer-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +655,7 @@
                         <div class="jm-question ten-question" id="question-ten">
                             <div class="jm-list--checkbox">
                                 <div class="jm-title--checlbox">
-                                    <h2>10. Que marcas comercializa tu empresa? (Puedes elegir m&aacute;s de una opci&oacute;n)</h2>
+                                    <h2>10. ¿Qu&eacute; marcas comercializa tu empresa? (Puedes elegir m&aacute;s de una opci&oacute;n)</h2>
                                 </div>
                                 <div class="jm-title--checlbox">
                                     <h2>SERVERS</h2>
@@ -698,7 +699,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="server-input">
-                                        <label class="mdl-textfield__label" for="server-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="server-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -739,7 +740,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="storage-input">
-                                        <label class="mdl-textfield__label" for="storage-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="storage-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -810,7 +811,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="wireless-input">
-                                        <label class="mdl-textfield__label" for="wireless-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="wireless-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -875,7 +876,7 @@
                                 <div class="jm-input">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="hyperconvergencia-input">
-                                        <label class="mdl-textfield__label" for="hyperconvergencia-input">Especifique</label>
+                                        <label class="mdl-textfield__label" for="hyperconvergencia-input">Especifica</label>
                                     </div>
                                 </div>
                             </div>
@@ -886,7 +887,7 @@
                         <div class="jm-question eleven-question" id="question-eleven">
                             <div class="jm-list--checkbox">
                                 <div class="jm-title--checlbox">
-                                    <h2>11. Que describe mejor a tu compa&ntilde;ia? (Puedes elegir m&aacute;s de una opci&oacute;n)</h2>
+                                    <h2>11. ¿Qu&eacute; describe mejor a tu compa&ntilde;ia? (Puedes elegir m&aacute;s de una opci&oacute;n)</h2>
                                 </div>
                                 <div class="js-checkbox max-width jm-checkbox--company">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="option-1">
@@ -950,7 +951,7 @@
                         <div class="jm-question twelve-question" id="question-twelve">
                             <div class="jm-list--checkbox">
                                 <div class="jm-title--checlbox">
-                                    <h2>12. Cual es la diferencia en contratar entre estos dos servicios de HPE PointNext : Proactive Care VS Proactive Advanced?</h2>
+                                    <h2>12. ¿Cu&aacute;l es la diferencia en contratar entre estos dos servicios de HPE PointNext : Proactive Care VS Proactive Advanced?</h2>
                                 </div>
                                 <div class="js-checkbox max-width jm-checkbox--twelve">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-1">
@@ -967,7 +968,7 @@
                                 <div class="js-checkbox max-width jm-checkbox--twelve">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-3">
                                         <input type="checkbox" id="question4-3" class="mdl-checkbox__input">
-                                        <span class="mdl-checkbox__label">C. Asistencia via telefonica en un tiempo de respuesta de 4hrs.</span>
+                                        <span class="mdl-checkbox__label">C. Asistencia v&iacute;a telef&oacute;nica en un tiempo de respuesta de 4hrs.</span>
                                     </label>
                                 </div>
                                 <div class="js-checkbox max-width jm-checkbox--twelve">
@@ -979,7 +980,7 @@
                                 <div class="js-checkbox max-width jm-checkbox--twelve">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question4-5">
                                         <input type="checkbox" id="question4-5" class="mdl-checkbox__input">
-                                        <span class="mdl-checkbox__label">E. Establecimiento de distintos equipos en misi&oacute;n critica dentro y fuera de la red.</span>
+                                        <span class="mdl-checkbox__label">E. Establecimiento de distintos equipos en misi&oacute;n cr&iacute;tica dentro y fuera de la red.</span>
                                     </label>
                                 </div>
                             </div>
@@ -990,7 +991,7 @@
                         <div class="jm-question thirteen-question" id="question-thirteen">
                             <div class="jm-list--checkbox">
                                 <div class="jm-title--checlbox">
-                                    <h2>13. Cuales son las ventajas competitivas de HPE Nimble Storage?</h2>
+                                    <h2>13. ¿Cu&aacute;les son las ventajas competitivas de HPE Nimble Storage?</h2>
                                 </div>
                                 <div class="js-checkbox max-width jm-checkbox--thirteen">
                                     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="question5-1">

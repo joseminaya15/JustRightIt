@@ -84,7 +84,8 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td align="left"><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td align="right"><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/aruba.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -206,7 +207,8 @@ class Home extends CI_Controller {
 			                                <td style="background-color: #415564;width:100%;">
 			                                    <table width="500" cellspacing="0" cellpadding="0" border="0" style="background-color: #415564;padding: 10px 20px;width: 100%;">
 			                                        <tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td align="left"><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/hpe-logo.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
+														<td align="right"><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/logo/aruba.png" width="125" alt="alternative text" border="0" style="display: block;"></a></td>
 			                                        </tr>
 			                                    </table>
 			                                </td>
@@ -221,7 +223,7 @@ class Home extends CI_Controller {
 														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
 													</tr>
 													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;padding-top:10px;"><font style="font-family: arial;color: #000000;font-size: 20px;font-weight: 600">'.$codigo.'</font></td>
+														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;"><font style="font-family: arial;color: #000000;font-size: 32px;font-weight: 600">'.$codigo.'</font></td>
 													</tr>
 													<tr>
 														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">El souvenir solo se entrega el día del evento</font></td>
