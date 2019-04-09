@@ -810,6 +810,9 @@ table
 				display -webkit-box
 				-webkit-line-clamp 5
 				-webkit-box-orient vertical
+				strong 
+					font-weight 100
+					font-family $bold
 			.js-button
 				margin 0
 				border none
@@ -823,11 +826,17 @@ table
 				flipCardBackHover()
 .jm-acceso
 	text-align center
+	.js-title
+		margin-bottom 10px
 	img 
 		max-width 200px
 		margin 20px auto
 		-webkit-animation mover .5s infinite  alternate
 		animation mover .5s infinite  alternate
+	span 
+		display block
+		font-size 20px
+		margin-bottom 20px
 @-webkit-keyframes mover
 	0%
 		transform translateY(0)

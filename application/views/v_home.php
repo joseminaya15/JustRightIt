@@ -218,11 +218,11 @@
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La Aruba ex&oacute;tica</h2>
-                                <img src="<?php echo RUTA_IMG?>logo/burger1.jpg">
+                                <img src="<?php echo RUTA_IMG?>logo/burger1.jpeg">
                             </div>
                             <div class="jm-book__back">
-                                <p>Estilo americano texano, torta de carne de res Premium en salsa BBQ, lonjas de tocineta crocante, 
-                                aros de cebolla empanizados, queso maduro y aros de jalape&ntilde;o.</p>
+                                <p><strong>Hamburguesa Escalante</strong> con gajos de papas, De lomito, servido cen lonjas sobre nuestro pan de ajonjol&iacute; acompa&ntilde;ada con guacamole, 
+                                    tocinera, rodajas de tomate con queso mozzarella fresco.</p>
                                 <button id="book1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
                             </div>
                         </div>
@@ -237,8 +237,8 @@
                                 <img src="<?php echo RUTA_IMG?>logo/burger2.png">                                
                             </div>
                             <div class="jm-book__back">
-                                <p>Delicioso lomo al t&eacute;rmino de su preferencia, ba&ntilde;ado en salsa 3 quesos, con mezclas de sabores, 
-                                aguacate, tocino y una deliciosa textura crocante de patac&oacute;n</p>
+                                <p><strong>Hamburguesa Poulet</strong> con gajos de papas, Hamburguesa de pollo empalizado, mostaza miel, lechuga, 
+                                    cebolla morada, servida en pan artesanal de hierbas.</p>
                                 <button id="book2" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
                             </div>
                         </div>
@@ -253,8 +253,8 @@
                                 <img src="<?php echo RUTA_IMG?>logo/burger3.png">
                             </div>
                             <div class="jm-book__back">
-                                <p>Deliciosa hamburguesa con lomito, servido en lonjas con pan de ajonjol&iacute;, acompa&ntilde;ada con 
-                                guacamole ( ligeramente picante ), tocineta, rodajas de tomate con queso mozzarella fresco.</p>
+                                <p><strong>Hamburguesa Parrillera</strong> con gajos de papas, Hamburguesa de torta en pan artesanal de hierbas con lechuga, tomate y aro de cebolla en tempura, 
+                                    sazonada con chimichurri.</p>
                                 <button id="book3" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
                             </div>
                         </div>
@@ -266,11 +266,10 @@
                         <div class="jm-book__flip">
                             <div class="jm-book__front">
                                 <h2>La ClearPass</h2>
-                                <img src="<?php echo RUTA_IMG?>logo/burger4.jpg">
+                                <img src="<?php echo RUTA_IMG?>logo/burger4.png">
                             </div>
                             <div class="jm-book__back">
-                                <p>Un rico pan artesanal con corteza y miga blanca, relleno de una mezcla de vegetales 
-                                salteados con salsa pomodoro de la casa y queso mozzarella gratinado.</p>
+                                <p>De lomito, servido cen lonjas sobre nuestro pan de ajonjol&iacute; acompa&ntilde;ada con guacamole, tocinera, rodajas de tomate.</p>
                                 <button id="book4" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModalLibro(this.id)">Ver m&aacute;s</button>
                             </div>
                         </div>
@@ -292,6 +291,7 @@
     <section id="login" class="js-section jm-white jm-acceso">
         <div class="js-container">
             <h2 class="js-title">COMPLETA LA ENCUESTA Y G&Aacute;NATE ESTE DASH CAM</h2>
+            <span>(Solo para los primeros 50 registrados)</span>
             <img src="<?php echo RUTA_IMG?>fondo/regalo.png">
             <p class="text-center">Si ya te encuentras registrado, ingresa tu email para realizar una breve encuesta y ganar grandes premios.</p>
             <div class="js-input js-input--default">

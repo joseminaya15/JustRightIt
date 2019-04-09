@@ -83,10 +83,10 @@ function sendInformation(){
 		msj('error', 'El formato de email es incorrecto');
 		return;
 	}
-	if(validateEmailCorporative(email)){
-      	msj('error', 'Ingrese un email corporativo');
-		return;
-	}
+	// if(validateEmailCorporative(email)){
+    //   	msj('error', 'Ingrese un email corporativo');
+	// 	return;
+	// }
 	if(phone == null || phone == '') {
 		msj('error', 'Teléfono debe completarse');
 		return;
