@@ -173,7 +173,7 @@ class Home extends CI_Controller {
 											'pregunta13'        => $pregunta13,
 											'codigo'            => $codigo);
 			$datoInsert  = $this->M_Datos->actualizarDatos($correo,'contact', $actualizarParticipante);
-			$this->sendCupo($correo,$codigo);
+			$this->sendCupo($correo);
           	$data['msj']   = $datoInsert['msj'];
           	$data['error'] = $datoInsert['error'];
 		} catch(Exception $ex) {
@@ -181,7 +181,7 @@ class Home extends CI_Controller {
 		}
       	echo json_encode($data);
 	}
-	function sendCupo($correo,$codigo){
+	function sendCupo($correo){
 		$data['error'] = EXIT_ERROR;
 		$data['msj']   = null;
 		try {  
@@ -218,24 +218,6 @@ class Home extends CI_Controller {
 			                                    <table width="400" cellspacing="0" cellpadding="0" border="0" align="center" style="padding: 30px 10px">
 			                                        <tr>
 			                                            <td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 18px;font-weight: 600">Gracias por participar.!</font></td>
-													</tr>
-													<tr>
-														<td><a href="#"><img src="http://iradianty.com/HPE/events/microsite/HPE-MasCercaDeTi/CostaRica/public/img/fondo/regalo.png" width="250" alt="alternative text" border="0" style="display: block;margin: auto;"></a></td>
-													</tr>
-													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px;"><font style="font-family: arial;color: #000000;font-size: 32px;font-weight: 600">'.$codigo.'</font></td>
-													</tr>
-													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">El souvenir solo se entrega el día del evento</font></td>
-													</tr>
-													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">No es transferible, la entrega es personal.</font></td>
-													</tr>
-													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">Presentar un documento de indentidad</font></td>
-													</tr>
-													<tr>
-														<td style="text-align: center;padding: 0;margin: 0;padding-bottom: 10px"><font style="font-family: arial;color: #000000;font-size: 16px;font-weight: 100">Los datos compartidos deberán ser correctos.</font></td>
 													</tr>
 			                                        <tr>
 			                                            <td style="text-align: center;"><font style="font-family: arial;color: #757575;font-size: 12px;">&copy;Copyright 2019 Hewlett Packard Enterprise Development LP</font></td>

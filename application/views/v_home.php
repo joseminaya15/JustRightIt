@@ -1032,13 +1032,6 @@
                             <div class="jm-cupo">
                                 <img src="<?php echo RUTA_IMG?>logo/logo.jpg">
                                 <h2>Gracias por participar!</h2>
-                                <h4>Para reclamar su premio deber&aacute; presentar la impresi&oacute;n o fotograf&iacute;a del c&oacute;digo que se le enviara a su correo electr&oacute;nico.</h4>
-                                <div class="jm-list--cupo">
-                                    <p>- El souvenir solo se entrega el d&iacute;a del evento.<p>
-                                    <p>- No es transferible, la entrega es personal.</p>
-                                    <p>- Presentar un documento de indentidad</p>
-                                    <p>- Los datos compartidos deber&aacute;n ser correctos.</p>
-                                </div>
                                 <div class="text-center">
                                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="reload()">Cerrar</button>
                                 </div> 
